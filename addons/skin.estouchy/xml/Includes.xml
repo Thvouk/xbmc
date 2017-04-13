@@ -105,7 +105,7 @@
 			<aspectratio>scale</aspectratio>
 			<include>ScreenWidth</include>
 			<height>960</height>
-			<texture colordiffuse="FF006699">special://skin/background/primary.jpg</texture>
+			<texture colordiffuse="FF0E597E">special://skin/background/primary.jpg</texture>
 			<visible>!Skin.HasSetting(UseCustomBackground)</visible>
 		</control>
 		<control type="image">
@@ -174,7 +174,7 @@
 			<aspectratio>scale</aspectratio>
 			<include>ScreenWidth</include>
 			<height>960</height>
-			<texture colordiffuse="4D24CCA2">special://skin/background/secondary1.png</texture>
+			<texture colordiffuse="330BAA8E">special://skin/background/secondary.jpg</texture>
 			<visible>!Skin.HasSetting(UseCustomBackground)</visible>
 		</control>
 		<control type="videowindow">
@@ -314,7 +314,7 @@
 			<include>Window_OpenClose_Animation</include>
 			<posx>40r</posx>
 			<posy>120</posy>
-			<visible>Control.IsVisible(60) + ![[Window.IsVisible(TVGuide) | Window.IsVisible(RadioGuide)] + Control.IsVisible(10)]</visible>
+			<visible>Control.IsVisible(60)</visible>
 			<animation effect="slide" start="40,0" end="0,0" time="400">Visible</animation>
 			<animation effect="slide" start="0,0" end="40,0" time="400">Hidden</animation>
 			<animation effect="slide" start="0,0" end="-7,0" time="0" condition="String.IsEqual(Skin.AspectRatio,4:3)">Conditional</animation>
@@ -997,8 +997,12 @@
 					<include condition="Window.IsVisible(Pictures)">PicturesMenu</include>
 					<include condition="Window.IsVisible(Programs)">ProgramsMenu</include>
 					<include condition="Window.IsVisible(TVChannels) | Window.IsVisible(RadioChannels) | Window.IsVisible(TVGuide) | Window.IsVisible(RadioGuide) | Window.IsVisible(TVRecordings) | Window.IsVisible(RadioRecordings) | Window.IsVisible(TVTimers) | Window.IsVisible(RadioTimers) | Window.IsVisible(TVTimerRules) | Window.IsVisible(RadioTimerRules) | Window.IsVisible(TVSearch) | Window.IsVisible(RadioSearch)">PVRMenu</include>
+<<<<<<< HEAD
 					<include condition="Window.IsVisible(Settings)">SettingsMenu</include>
 					<include condition="Window.IsVisible(PlayerSettings) | Window.IsVisible(MediaSettings) | Window.IsVisible(PVRSettings) | Window.IsVisible(ServiceSettings) | Window.IsVisible(InterfaceSettings) | Window.IsVisible(GameSettings) | Window.IsVisible(SystemSettings)">SettingsCatMenu</include>
+=======
+					<include condition="Window.IsVisible(PlayerSettings) | Window.IsVisible(MediaSettings) | Window.IsVisible(PVRSettings) | Window.IsVisible(ServiceSettings) | Window.IsVisible(InterfaceSettings) | Window.IsVisible(SystemSettings)">SettingsMenu</include>
+>>>>>>> xbmc/Krypton
 					<include condition="Window.IsVisible(Videos)">VideosMenu</include>
 					<include condition="Window.IsVisible(VideoOSD)">VideoOSDMenu</include>
 					<include condition="Window.IsVisible(VideoPlaylist)">VideoPlaylistMenu</include>

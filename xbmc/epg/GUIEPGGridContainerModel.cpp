@@ -321,7 +321,11 @@ void CGUIEPGGridContainerModel::FindChannelAndBlockIndex(int channelUid, unsigne
 
 unsigned int CGUIEPGGridContainerModel::GetGridStartPadding() const
 {
+<<<<<<< HEAD
   unsigned int iEpgLingerTime = g_advancedSettings.m_iEpgLingerTime;
+=======
+  int iEpgLingerTime = g_advancedSettings.m_iEpgLingerTime;
+>>>>>>> xbmc/Krypton
 
   if (iEpgLingerTime < GRID_START_PADDING)
     return iEpgLingerTime;

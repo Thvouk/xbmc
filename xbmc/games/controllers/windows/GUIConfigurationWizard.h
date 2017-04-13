@@ -34,13 +34,19 @@
 #include <string>
 #include <vector>
 
+<<<<<<< HEAD
 namespace KODI
 {
+=======
+>>>>>>> xbmc/Krypton
 namespace KEYBOARD
 {
   class IActionMap;
 }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> xbmc/Krypton
 
 namespace GAME
 {
@@ -64,6 +70,7 @@ namespace GAME
     // implementation of IButtonMapper
     virtual std::string ControllerID(void) const override { return m_strControllerId; }
     virtual bool NeedsCooldown(void) const override { return true; }
+<<<<<<< HEAD
     virtual bool Emulation(void) const override { return m_bEmulation; }
     virtual unsigned int ControllerNumber(void) const override { return m_controllerNumber; }
     virtual bool MapPrimitive(KODI::JOYSTICK::IButtonMap* buttonMap,
@@ -71,6 +78,13 @@ namespace GAME
                               const KODI::JOYSTICK::CDriverPrimitive& primitive) override;
     virtual void OnEventFrame(const KODI::JOYSTICK::IButtonMap* buttonMap, bool bMotion) override;
     virtual void OnLateAxis(const KODI::JOYSTICK::IButtonMap* buttonMap, unsigned int axisIndex) override;
+=======
+    virtual bool MapPrimitive(JOYSTICK::IButtonMap* buttonMap,
+                              JOYSTICK::IActionMap* actionMap,
+                              const JOYSTICK::CDriverPrimitive& primitive) override;
+    virtual void OnEventFrame(const JOYSTICK::IButtonMap* buttonMap, bool bMotion) override;
+    virtual void OnLateAxis(const JOYSTICK::IButtonMap* buttonMap, unsigned int axisIndex) override;
+>>>>>>> xbmc/Krypton
 
     // implementation of IKeyboardHandler
     virtual bool OnKeyPress(const CKey& key) override;
@@ -116,9 +130,16 @@ namespace GAME
     CEvent                               m_inputEvent;
     CEvent                               m_motionlessEvent;
     CCriticalSection                     m_motionMutex;
+<<<<<<< HEAD
     std::set<const KODI::JOYSTICK::IButtonMap*> m_bInMotion;
 
     // Keyboard handling
     std::unique_ptr<KODI::KEYBOARD::IActionMap> m_actionMap;
+=======
+    std::set<const JOYSTICK::IButtonMap*> m_bInMotion;
+
+    // Keyboard handling
+    std::unique_ptr<KEYBOARD::IActionMap> m_actionMap;
+>>>>>>> xbmc/Krypton
   };
 }

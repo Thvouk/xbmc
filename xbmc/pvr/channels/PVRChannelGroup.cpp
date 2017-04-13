@@ -271,6 +271,13 @@ void CPVRChannelGroup::SearchAndSetChannelIcons(bool bUpdateDb /* = false */)
   if (iconPath.empty())
     return;
 
+<<<<<<< HEAD
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+  if (!database)
+    return;
+
+>>>>>>> xbmc/Krypton
   /* fetch files in icon path for fast lookup */
   CFileItemList fileItemList;
   XFILE::CDirectory::GetDirectory(iconPath, fileItemList, ".jpg|.png|.tbn");
@@ -278,7 +285,11 @@ void CPVRChannelGroup::SearchAndSetChannelIcons(bool bUpdateDb /* = false */)
   if (fileItemList.IsEmpty())
     return;
 
+<<<<<<< HEAD
   CGUIDialogProgressBarHandle* dlgProgressHandle = CServiceBroker::GetPVRManager().ShowProgressDialog(g_localizeStrings.Get(19286)); // Searching for channel icons
+=======
+  CGUIDialogProgressBarHandle* dlgProgressHandle = g_PVRManager.ShowProgressDialog(g_localizeStrings.Get(19286)); // Searching for channel icons
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_critSection);
 
@@ -552,7 +563,11 @@ PVR_CHANNEL_GROUP_SORTED_MEMBERS CPVRChannelGroup::GetMembers(void) const
 
 int CPVRChannelGroup::GetMembers(CFileItemList &results, bool bGroupMembers /* = true */) const
 {
+<<<<<<< HEAD
   const CPVRChannelGroup* channels = bGroupMembers ? this : CServiceBroker::GetPVRManager().ChannelGroups()->GetGroupAll(m_bRadio).get();
+=======
+  const CPVRChannelGroup* channels = bGroupMembers ? this : g_PVRChannelGroups->GetGroupAll(m_bRadio).get();
+>>>>>>> xbmc/Krypton
   int iOrigSize = results.Size();
 
   CSingleLock lock(channels->m_critSection);
@@ -583,7 +598,11 @@ CPVRChannelGroupPtr CPVRChannelGroup::GetPreviousGroup(void) const
 
 int CPVRChannelGroup::LoadFromDb(bool bCompress /* = false */)
 {
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
   if (!database)
     return -1;
 
@@ -604,7 +623,11 @@ bool CPVRChannelGroup::AddAndUpdateChannels(const CPVRChannelGroup &channels, bo
 {
   bool bReturn(false);
   bool bPreventSortAndRenumber(PreventSortAndRenumber());
+<<<<<<< HEAD
   const CPVRChannelGroupPtr groupAll(CServiceBroker::GetPVRManager().ChannelGroups()->GetGroupAll(m_bRadio));
+=======
+  const CPVRChannelGroupPtr groupAll(g_PVRChannelGroups->GetGroupAll(m_bRadio));
+>>>>>>> xbmc/Krypton
 
   SetPreventSortAndRenumber();
 
@@ -639,7 +662,11 @@ bool CPVRChannelGroup::AddAndUpdateChannels(const CPVRChannelGroup &channels, bo
 bool CPVRChannelGroup::RemoveDeletedChannels(const CPVRChannelGroup &channels)
 {
   bool bReturn(false);
+<<<<<<< HEAD
   CPVRChannelGroups *groups = CServiceBroker::GetPVRManager().ChannelGroups()->Get(m_bRadio);
+=======
+  CPVRChannelGroups *groups = g_PVRChannelGroups->Get(m_bRadio);
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_critSection);
 
@@ -700,7 +727,11 @@ bool CPVRChannelGroup::UpdateGroupEntries(const CPVRChannelGroup &channels)
   bool bChanged(false);
   bool bRemoved(false);
 
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
   if (!database)
     return bReturn;
 
@@ -763,7 +794,11 @@ bool CPVRChannelGroup::RemoveFromGroup(const CPVRChannelPtr &channel)
 
 bool CPVRChannelGroup::AddToGroup(const CPVRChannelPtr &channel, int iChannelNumber /* = 0 */)
 {
+<<<<<<< HEAD
   const CPVRChannelGroupPtr groupAll(CServiceBroker::GetPVRManager().ChannelGroups()->GetGroupAll(m_bRadio));
+=======
+  const CPVRChannelGroupPtr groupAll(g_PVRChannelGroups->GetGroupAll(m_bRadio));
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_critSection);
 
@@ -838,7 +873,11 @@ bool CPVRChannelGroup::SetGroupName(const std::string &strGroupName, bool bSaveI
 bool CPVRChannelGroup::Persist(void)
 {
   bool bReturn(true);
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_critSection);
 
@@ -1141,7 +1180,11 @@ time_t CPVRChannelGroup::LastWatched(void) const
 
 bool CPVRChannelGroup::SetLastWatched(time_t iLastWatched)
 {
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_critSection);
 

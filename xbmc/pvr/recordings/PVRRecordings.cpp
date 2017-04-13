@@ -168,9 +168,15 @@ void CPVRRecordings::Update(void)
   m_bIsUpdating = false;
   lock.Leave();
 
+<<<<<<< HEAD
   CServiceBroker::GetPVRManager().SetChanged();
   CServiceBroker::GetPVRManager().NotifyObservers(ObservableMessageRecordings);
   CServiceBroker::GetPVRManager().PublishEvent(RecordingsInvalidated);
+=======
+  g_PVRManager.SetChanged();
+  g_PVRManager.NotifyObservers(ObservableMessageRecordings);
+  g_PVRManager.PublishEvent(RecordingsInvalidated);
+>>>>>>> xbmc/Krypton
 }
 
 int CPVRRecordings::GetNumTVRecordings() const

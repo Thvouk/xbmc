@@ -68,11 +68,16 @@
 #include "settings/DisplaySettings.h"
 #include "guilib/GraphicContext.h"
 #include "guilib/GUIWindowManager.h"
+<<<<<<< HEAD
 #include "cores/AudioEngine/Interfaces/AE.h"
 #include "ServiceBroker.h"
 #include "platform/android/activity/IInputDeviceCallbacks.h"
 #include "platform/android/activity/IInputDeviceEventHandler.h"
 #include "input/Key.h"
+=======
+#include "guilib/GraphicContext.h"
+#include "settings/DisplaySettings.h"
+>>>>>>> xbmc/Krypton
 #include "utils/log.h"
 #include "input/MouseStat.h"
 #include "cores/VideoPlayer/VideoRenderers/RenderManager.h"

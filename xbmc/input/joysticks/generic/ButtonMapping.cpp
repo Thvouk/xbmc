@@ -22,6 +22,10 @@
 #include "games/GameServices.h"
 #include "games/controllers/Controller.h"
 #include "games/controllers/ControllerFeature.h"
+<<<<<<< HEAD
+=======
+#include "input/joysticks/DefaultJoystick.h"
+>>>>>>> xbmc/Krypton
 #include "input/joysticks/DriverPrimitive.h"
 #include "input/joysticks/IActionMap.h"
 #include "input/joysticks/IButtonMap.h"
@@ -152,6 +156,7 @@ void CAxisDetector::ProcessMotion()
       if (elapsedMs < TRIGGER_DELAY_MS)
         bIgnore = true;
     }
+<<<<<<< HEAD
 
     if (!bIgnore)
     {
@@ -196,6 +201,47 @@ void CAxisDetector::DetectType(float position)
   if (std::abs(position - m_config.center) > 1.0f)
     m_config.range = 2;
 
+=======
+
+    if (!bIgnore)
+    {
+      // Update driver primitive if we're mapping an anomalous trigger
+      if (m_type == AXIS_TYPE::OFFSET)
+        m_activatedPrimitive = CDriverPrimitive(m_axisIndex, m_config.center, m_activatedPrimitive.SemiAxisDirection(), m_config.range);
+
+      // Map primitive
+      if (!m_buttonMapping->MapPrimitive(m_activatedPrimitive))
+      {
+        if (m_type == AXIS_TYPE::OFFSET)
+          CLog::Log(LOGDEBUG, "Mapping offset axis %u failed", m_axisIndex);
+        else
+          CLog::Log(LOGDEBUG, "Mapping normal axis %u failed", m_axisIndex);
+      }
+
+      m_state = AXIS_STATE::MAPPED;
+    }
+  }
+}
+
+void CAxisDetector::SetEmitted(const CDriverPrimitive& activePrimitive)
+{
+  m_state = AXIS_STATE::MAPPED;
+  m_activatedPrimitive = activePrimitive;
+}
+
+void CAxisDetector::DetectType(float position)
+{
+  // Some platforms don't report a value until the axis is first changed.
+  // Detection relies on an initial value, so this axis will be disabled until
+  // the user begins button mapping again.
+  if (m_config.bLateDiscovery)
+    return;
+
+  // Update range if a range of > 1 is observed
+  if (std::abs(position - m_config.center) > 1.0f)
+    m_config.range = 2;
+
+>>>>>>> xbmc/Krypton
   if (m_type != AXIS_TYPE::UNKNOWN)
     return;
 
@@ -282,7 +328,11 @@ CButtonMapping::CButtonMapping(IButtonMapper* buttonMapper, IButtonMap* buttonMa
       axisConfig.center = primitive.Center();
       axisConfig.range = primitive.Range();
 
+<<<<<<< HEAD
       GetAxis(primitive.Index(), static_cast<float>(primitive.Center()), axisConfig).SetEmitted(primitive);
+=======
+      GetAxis(primitive.Index(), primitive.Center(), axisConfig).SetEmitted(primitive);
+>>>>>>> xbmc/Krypton
     }
   }
 }
@@ -361,6 +411,7 @@ bool CButtonMapping::MapPrimitive(const CDriverPrimitive& primitive)
   return bHandled;
 }
 
+<<<<<<< HEAD
 bool CButtonMapping::IsMapping() const
 {
   for (auto itAxis : m_axes)
@@ -369,6 +420,21 @@ bool CButtonMapping::IsMapping() const
       return true;
   }
 
+=======
+bool CButtonMapping::IsDefaultController()
+{
+  return m_buttonMapper->ControllerID() == DEFAULT_CONTROLLER_ID;
+}
+
+bool CButtonMapping::IsMapping() const
+{
+  for (auto itAxis : m_axes)
+  {
+    if (itAxis.second.IsMapping())
+      return true;
+  }
+
+>>>>>>> xbmc/Krypton
   return false;
 }
 

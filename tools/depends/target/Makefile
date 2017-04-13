@@ -9,8 +9,13 @@ DEPENDS = \
 	libgcrypt bzip2 liblzo2 libzip freetype2 fontconfig \
 	openssl gmp nettle gnutls curl \
 	libjpeg-turbo libpng fribidi libass \
+<<<<<<< HEAD
 	libxml2 rapidjson libmicrohttpd mysql libffi \
 	python27 libshairplay libfmt \
+=======
+	libxml2 yajl libmicrohttpd mysql libffi \
+	python27 libshairplay \
+>>>>>>> xbmc/Krypton
 	libplist libcec libbluray tinyxml dummy-libxbmc \
 	libssh taglib libusb libnfs \
 	pythonmodule-pil pythonmodule-pycryptodome pythonmodule-setuptools \

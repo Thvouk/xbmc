@@ -65,7 +65,11 @@ JSONRPC_STATUS CPVROperations::GetChannelGroups(const std::string &method, ITran
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
   
+<<<<<<< HEAD
   CPVRChannelGroupsContainerPtr channelGroupContainer = CServiceBroker::GetPVRManager().ChannelGroups();
+=======
+  CPVRChannelGroupsContainerPtr channelGroupContainer = g_PVRChannelGroups;
+>>>>>>> xbmc/Krypton
   if (!channelGroupContainer)
     return FailedToExecute;
 
@@ -88,7 +92,11 @@ JSONRPC_STATUS CPVROperations::GetChannelGroupDetails(const std::string &method,
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
 
+<<<<<<< HEAD
   CPVRChannelGroupsContainerPtr channelGroupContainer = CServiceBroker::GetPVRManager().ChannelGroups();
+=======
+  CPVRChannelGroupsContainerPtr channelGroupContainer = g_PVRChannelGroups;
+>>>>>>> xbmc/Krypton
   if (!channelGroupContainer)
     return FailedToExecute;
   
@@ -112,7 +120,11 @@ JSONRPC_STATUS CPVROperations::GetChannels(const std::string &method, ITransport
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
   
+<<<<<<< HEAD
   CPVRChannelGroupsContainerPtr channelGroupContainer = CServiceBroker::GetPVRManager().ChannelGroups();
+=======
+  CPVRChannelGroupsContainerPtr channelGroupContainer = g_PVRChannelGroups;
+>>>>>>> xbmc/Krypton
   if (!channelGroupContainer)
     return FailedToExecute;
   
@@ -140,7 +152,11 @@ JSONRPC_STATUS CPVROperations::GetChannelDetails(const std::string &method, ITra
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
   
+<<<<<<< HEAD
   CPVRChannelGroupsContainerPtr channelGroupContainer = CServiceBroker::GetPVRManager().ChannelGroups();
+=======
+  CPVRChannelGroupsContainerPtr channelGroupContainer = g_PVRChannelGroups;
+>>>>>>> xbmc/Krypton
   if (!channelGroupContainer)
     return FailedToExecute;
   
@@ -158,7 +174,11 @@ JSONRPC_STATUS CPVROperations::GetBroadcasts(const std::string &method, ITranspo
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
 
+<<<<<<< HEAD
   CPVRChannelGroupsContainerPtr channelGroupContainer = CServiceBroker::GetPVRManager().ChannelGroups();
+=======
+  CPVRChannelGroupsContainerPtr channelGroupContainer = g_PVRManager.ChannelGroups();
+>>>>>>> xbmc/Krypton
   if (!channelGroupContainer)
     return FailedToExecute;
 
@@ -209,7 +229,11 @@ JSONRPC_STATUS CPVROperations::Record(const std::string &method, ITransportLayer
   }
   else if (channel.isInteger())
   {
+<<<<<<< HEAD
     CPVRChannelGroupsContainerPtr channelGroupContainer = CServiceBroker::GetPVRManager().ChannelGroups();
+=======
+    CPVRChannelGroupsContainerPtr channelGroupContainer = g_PVRManager.ChannelGroups();
+>>>>>>> xbmc/Krypton
     if (!channelGroupContainer)
       return FailedToExecute;
 
@@ -300,7 +324,11 @@ JSONRPC_STATUS CPVROperations::GetTimers(const std::string &method, ITransportLa
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
 
+<<<<<<< HEAD
   CPVRTimersPtr timers = CServiceBroker::GetPVRManager().Timers();
+=======
+  CPVRTimersPtr timers = g_PVRTimers;
+>>>>>>> xbmc/Krypton
   if (!timers)
     return FailedToExecute;
 
@@ -317,7 +345,11 @@ JSONRPC_STATUS CPVROperations::GetTimerDetails(const std::string &method, ITrans
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
 
+<<<<<<< HEAD
   CPVRTimersPtr timers = CServiceBroker::GetPVRManager().Timers();
+=======
+  CPVRTimersPtr timers = g_PVRTimers;
+>>>>>>> xbmc/Krypton
   if (!timers)
     return FailedToExecute;
 
@@ -358,7 +390,11 @@ JSONRPC_STATUS CPVROperations::DeleteTimer(const std::string &method, ITransport
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
 
+<<<<<<< HEAD
   CPVRTimersPtr timers = CServiceBroker::GetPVRManager().Timers();
+=======
+  CPVRTimersPtr timers = g_PVRTimers;
+>>>>>>> xbmc/Krypton
   if (!timers)
     return FailedToExecute;
 
@@ -399,7 +435,11 @@ JSONRPC_STATUS CPVROperations::ToggleTimer(const std::string &method, ITransport
     if (!timer)
       return InvalidParams;
 
+<<<<<<< HEAD
     sentOkay = CServiceBroker::GetPVRManager().GUIActions()->AddTimer(timer);
+=======
+    sentOkay = g_PVRTimers->AddTimer(timer);
+>>>>>>> xbmc/Krypton
   }
 
   if (sentOkay)
@@ -413,7 +453,11 @@ JSONRPC_STATUS CPVROperations::GetRecordings(const std::string &method, ITranspo
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
 
+<<<<<<< HEAD
   CPVRRecordingsPtr recordings = CServiceBroker::GetPVRManager().Recordings();
+=======
+  CPVRRecordingsPtr recordings = g_PVRRecordings;
+>>>>>>> xbmc/Krypton
   if (!recordings)
     return FailedToExecute;
 
@@ -430,7 +474,11 @@ JSONRPC_STATUS CPVROperations::GetRecordingDetails(const std::string &method, IT
   if (!CServiceBroker::GetPVRManager().IsStarted())
     return FailedToExecute;
 
+<<<<<<< HEAD
   CPVRRecordingsPtr recordings = CServiceBroker::GetPVRManager().Recordings();
+=======
+  CPVRRecordingsPtr recordings = g_PVRRecordings;
+>>>>>>> xbmc/Krypton
   if (!recordings)
     return FailedToExecute;
 

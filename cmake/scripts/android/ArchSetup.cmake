@@ -25,6 +25,10 @@ else()
   endif()
 endif()
 
+<<<<<<< HEAD:cmake/scripts/android/ArchSetup.cmake
+=======
+set(ENABLE_SDL OFF CACHE BOOL "" FORCE)
+>>>>>>> xbmc/Krypton:project/cmake/scripts/android/ArchSetup.cmake
 set(ENABLE_X11 OFF CACHE BOOL "" FORCE)
 set(ENABLE_AML OFF CACHE BOOL "" FORCE)
 set(ENABLE_OPTICAL OFF CACHE BOOL "" FORCE)

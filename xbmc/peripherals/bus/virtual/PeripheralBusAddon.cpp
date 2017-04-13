@@ -57,7 +57,11 @@ CPeripheralBusAddon::~CPeripheralBusAddon()
 
   // destroy any (loaded) addons
   for (const auto& addon : m_addons)
+<<<<<<< HEAD
     addon->DestroyAddon();
+=======
+    addon->Destroy();
+>>>>>>> xbmc/Krypton
 
   m_failedAddons.clear();
   m_addons.clear();

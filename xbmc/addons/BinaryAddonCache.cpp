@@ -58,6 +58,7 @@ void CBinaryAddonCache::GetAddons(VECADDONS& addons, const TYPE& type)
     if (it != m_addons.end())
       myAddons = it->second;
   }
+<<<<<<< HEAD
 
   for (auto &addon : myAddons)
   {
@@ -84,6 +85,13 @@ AddonPtr CBinaryAddonCache::GetAddonInstance(const std::string& strId, TYPE type
 
     if (itAddon != addons.end())
       addon = *itAddon;
+=======
+
+  for (auto &addon : myAddons)
+  {
+    if (!CAddonMgr::GetInstance().IsAddonDisabled(addon->ID()))
+      addons.emplace_back(std::move(addon));
+>>>>>>> xbmc/Krypton
   }
 
   return addon;

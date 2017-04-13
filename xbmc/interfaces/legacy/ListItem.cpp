@@ -479,9 +479,15 @@ namespace XBMCAddon
           else if (key == "votes")
             videotag.SetVotes(StringUtils::ReturnDigits(value));
           else if (key == "trailer")
+<<<<<<< HEAD
             videotag.SetTrailer(value);
           else if (key == "path")
             videotag.SetPath(value);
+=======
+            item->GetVideoInfoTag()->m_strTrailer = value;
+          else if (key == "path")
+            item->GetVideoInfoTag()->m_strPath = value;
+>>>>>>> xbmc/Krypton
           else if (key == "date")
           {
             if (value.length() == 10)

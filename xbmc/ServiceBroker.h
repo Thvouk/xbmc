@@ -60,6 +60,11 @@ namespace PERIPHERALS
   class CPeripherals;
 }
 
+namespace GAME
+{
+  class CGameServices;
+}
+
 class CServiceBroker
 {
 public:
@@ -72,8 +77,12 @@ public:
   static CContextMenuManager& GetContextMenuManager();
   static CDataCacheCore& GetDataCacheCore();
   static PLAYLIST::CPlayListPlayer& GetPlaylistPlayer();
+<<<<<<< HEAD
   static CSettings& GetSettings();
   static GAME::CGameServices& GetGameServices();
   static PERIPHERALS::CPeripherals& GetPeripherals();
   static bool IsBinaryAddonCacheUp();
+=======
+  static GAME::CGameServices& GetGameServices();
+>>>>>>> xbmc/Krypton
 };

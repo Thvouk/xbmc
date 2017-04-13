@@ -44,7 +44,11 @@ void CPictureInfoLoader::OnLoaderStart()
   m_mapFileItems->SetFastLookup(true);
 
   m_tagReads = 0;
+<<<<<<< HEAD
   m_loadTags = CServiceBroker::GetSettings().GetBool(CSettings::SETTING_PICTURES_USETAGS);
+=======
+  m_loadTags = CSettings::GetInstance().GetBool(CSettings::SETTING_PICTURES_USETAGS);
+>>>>>>> xbmc/Krypton
 
   if (m_pProgressCallback)
     m_pProgressCallback->SetProgressMax(m_pVecItems->GetFileCount());

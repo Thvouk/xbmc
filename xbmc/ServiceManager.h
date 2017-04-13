@@ -65,6 +65,11 @@ namespace PERIPHERALS
   class CPeripherals;
 }
 
+namespace GAME
+{
+  class CGameServices;
+}
+
 class CServiceManager
 {
 public:
@@ -92,7 +97,10 @@ public:
    */
   CPlatform& GetPlatform();
   GAME::CGameServices& GetGameServices();
+<<<<<<< HEAD
   PERIPHERALS::CPeripherals& GetPeripherals();
+=======
+>>>>>>> xbmc/Krypton
 
   PLAYLIST::CPlayListPlayer& GetPlaylistPlayer();
   int init_level = 0;
@@ -127,7 +135,11 @@ protected:
   std::unique_ptr<CDataCacheCore, delete_dataCacheCore> m_dataCacheCore;
   std::unique_ptr<CPlatform> m_Platform;
   std::unique_ptr<PLAYLIST::CPlayListPlayer> m_playlistPlayer;
+<<<<<<< HEAD
   std::unique_ptr<CSettings> m_settings;
   std::unique_ptr<GAME::CGameServices> m_gameServices;
   std::unique_ptr<PERIPHERALS::CPeripherals> m_peripherals;
+=======
+  std::unique_ptr<GAME::CGameServices> m_gameServices;
+>>>>>>> xbmc/Krypton
 };

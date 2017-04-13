@@ -916,7 +916,11 @@ long StringUtils::TimeStringToSeconds(const std::string &timeString)
 std::string StringUtils::SecondsToTimeString(long lSeconds, TIME_FORMAT format)
 {
   bool isNegative = lSeconds < 0;
+<<<<<<< HEAD
   lSeconds = std::abs(lSeconds);
+=======
+  lSeconds = abs(lSeconds);
+>>>>>>> xbmc/Krypton
   int hh = lSeconds / 3600;
   lSeconds = lSeconds % 3600;
   int mm = lSeconds / 60;

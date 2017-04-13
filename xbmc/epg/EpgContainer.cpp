@@ -187,6 +187,7 @@ void CEpgContainer::Start(bool bAsync)
     if (!m_bStop)
     {
       CheckPlayingEvents();
+<<<<<<< HEAD
 
       Create();
       SetPriority(-1);
@@ -198,6 +199,19 @@ void CEpgContainer::Start(bool bAsync)
   if (!bStop)
   {
     CServiceBroker::GetPVRManager().TriggerEpgsCreate();
+=======
+
+      Create();
+      SetPriority(-1);
+
+      m_bStarted = true;
+    }
+  }
+
+  if (!bStop)
+  {
+    g_PVRManager.TriggerEpgsCreate();
+>>>>>>> xbmc/Krypton
     CLog::Log(LOGNOTICE, "%s - EPG thread started", __FUNCTION__);
   }
 }
@@ -811,7 +825,11 @@ bool CEpgContainer::CheckPlayingEvents(void)
       iNextEpgActiveTagCheck += g_advancedSettings.m_iEpgActiveTagCheckInterval;
 
       /* pvr tags always start on the full minute */
+<<<<<<< HEAD
       if (CServiceBroker::GetPVRManager().IsStarted())
+=======
+      if (g_PVRManager.IsStarted())
+>>>>>>> xbmc/Krypton
         iNextEpgActiveTagCheck -= iNextEpgActiveTagCheck % 60;
 
       bReturn = true;

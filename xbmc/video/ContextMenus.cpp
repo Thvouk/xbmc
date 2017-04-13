@@ -54,6 +54,7 @@ bool CMarkWatched::IsVisible(const CFileItem& item) const
   if (item.IsDeleted()) // e.g. trashed pvr recording
     return false;
 
+<<<<<<< HEAD
   if (item.m_bIsFolder) //Only allow db content and recording folders to be updated recursively
   {
     if (item.HasVideoInfoTag())
@@ -65,6 +66,15 @@ bool CMarkWatched::IsVisible(const CFileItem& item) const
     return false;
 
   return item.GetVideoInfoTag()->GetPlayCount() == 0;
+=======
+  if (item.IsPVRRecording())
+    return false; // pvr recordings have its own implementation for this
+
+  if (item.m_bIsFolder) //Only allow db content to be updated recursively
+    return item.IsVideoDb();
+
+  return item.GetVideoInfoTag()->m_playCount == 0;
+>>>>>>> xbmc/Krypton
 }
 
 bool CMarkWatched::Execute(const CFileItemPtr& item) const
@@ -78,6 +88,7 @@ bool CMarkUnWatched::IsVisible(const CFileItem& item) const
   if (item.IsDeleted()) // e.g. trashed pvr recording
     return false;
 
+<<<<<<< HEAD
   if (item.m_bIsFolder) //Only allow db content and recording folders to be updated recursively
   {
     if (item.HasVideoInfoTag())
@@ -89,6 +100,15 @@ bool CMarkUnWatched::IsVisible(const CFileItem& item) const
     return false;
 
   return item.GetVideoInfoTag()->GetPlayCount() > 0;
+=======
+  if (item.IsPVRRecording())
+    return false; // pvr recordings have its own implementation for this
+
+  if (item.m_bIsFolder) //Only allow db content to be updated recursively
+    return item.IsVideoDb();
+
+  return item.GetVideoInfoTag()->m_playCount > 0;
+>>>>>>> xbmc/Krypton
 }
 
 bool CMarkUnWatched::Execute(const CFileItemPtr& item) const
@@ -104,9 +124,14 @@ std::string CResume::GetLabel(const CFileItem& item) const
 
 bool CResume::IsVisible(const CFileItem& itemIn) const
 {
+<<<<<<< HEAD
   CFileItem item(itemIn.GetItemToPlay());
   if (item.IsDeleted()) // e.g. trashed pvr recording
     return false;
+=======
+  if (item.IsPVRRecording())
+    return false; // pvr recordings have its own implementation for this
+>>>>>>> xbmc/Krypton
 
   return CGUIWindowVideoBase::HasResumeItemOffset(&item);
 }
@@ -155,7 +180,14 @@ bool CPlay::IsVisible(const CFileItem& itemIn) const
   if (item.m_bIsFolder)
     return false; //! @todo implement
 
+<<<<<<< HEAD
   return item.IsVideo() || item.IsLiveTV() || item.IsDVD() || item.IsCDDA();
+=======
+  if (item.IsPVRRecording())
+    return false; // pvr recordings have its own implementation for this
+
+  return item.IsVideo() || item.IsDVD() || item.IsCDDA();
+>>>>>>> xbmc/Krypton
 }
 
 bool CPlay::Execute(const CFileItemPtr& itemIn) const

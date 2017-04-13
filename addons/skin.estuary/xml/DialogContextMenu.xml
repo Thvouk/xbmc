@@ -5,7 +5,12 @@
 	<coordinates>
 		<left>0</left>
 		<top>0</top>
+<<<<<<< HEAD
 		<origin x="50%" y="400">Window.IsActive(Home)</origin>
+=======
+		<origin x="1055" y="400">Window.IsActive(Home) + String.IsEqual(Skin.AspectRatio,21:9)</origin>
+		<origin x="735" y="400">Window.IsActive(Home) + !String.IsEqual(Skin.AspectRatio,21:9)</origin>
+>>>>>>> xbmc/Krypton
 	</coordinates>
 	<controls>
 		<control type="image">

@@ -88,14 +88,31 @@ bool HasRumbleFeature(const std::string &condition, const std::string &value, co
   return CServiceBroker::GetPeripherals().SupportsFeature(PERIPHERALS::FEATURE_RUMBLE);
 }
 
+<<<<<<< HEAD
 bool HasRumbleController(const std::string &condition, const std::string &value, const CSetting *setting, void *data)
 {
   return CServiceBroker::GetPeripherals().HasPeripheralWithFeature(PERIPHERALS::FEATURE_RUMBLE);
+=======
+  return g_peripherals.SupportsFeature(FEATURE_RUMBLE);
+}
+
+bool HasRumbleController(const std::string &condition, const std::string &value, const CSetting *setting, void *data)
+{
+  using namespace PERIPHERALS;
+
+  return g_peripherals.HasPeripheralWithFeature(FEATURE_RUMBLE);
+>>>>>>> xbmc/Krypton
 }
 
 bool HasPowerOffFeature(const std::string &condition, const std::string &value, const CSetting *setting, void *data)
 {
+<<<<<<< HEAD
   return CServiceBroker::GetPeripherals().SupportsFeature(PERIPHERALS::FEATURE_POWER_OFF);
+=======
+  using namespace PERIPHERALS;
+
+  return g_peripherals.SupportsFeature(FEATURE_POWER_OFF);
+>>>>>>> xbmc/Krypton
 }
 
 bool IsFullscreen(const std::string &condition, const std::string &value, const CSetting *setting, void *data)

@@ -50,8 +50,12 @@
 					</include>
 					<control type="grouplist" id="5001">
 						<include>WidgetGroupListCommon</include>
+<<<<<<< HEAD
 						<pagecontrol>5010</pagecontrol>
 						<include content="WidgetListCategories" condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">
+=======
+						<include content="WidgetListCategories" condition="Library.HasContent(movies)">
+>>>>>>> xbmc/Krypton
 							<param name="content_path" value="library://video/movies/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -115,8 +119,12 @@
 					</include>
 					<control type="grouplist" id="6001">
 						<include>WidgetGroupListCommon</include>
+<<<<<<< HEAD
 						<pagecontrol>6010</pagecontrol>
 						<include content="WidgetListCategories" condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">
+=======
+						<include content="WidgetListCategories" condition="Library.HasContent(tvshows)">
+>>>>>>> xbmc/Krypton
 							<param name="content_path" value="library://video/tvshows/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -177,8 +185,12 @@
 					</include>
 					<control type="grouplist" id="7001">
 						<include>WidgetGroupListCommon</include>
+<<<<<<< HEAD
 						<pagecontrol>7010</pagecontrol>
 						<include content="WidgetListCategories" condition="Library.HasContent(music) + !Skin.HasSetting(home_no_categories_widget)">
+=======
+						<include content="WidgetListCategories" condition="Library.HasContent(music)">
+>>>>>>> xbmc/Krypton
 							<param name="content_path" value="library://music/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="music"/>
@@ -247,13 +259,21 @@
 					</include>
 					<control type="grouplist" id="8001">
 						<include>WidgetGroupListCommon</include>
+<<<<<<< HEAD
 						<pagecontrol>8010</pagecontrol>
 						<include content="WidgetListCategories" condition="!Skin.HasSetting(home_no_categories_widget)" >
 							<param name="content_path" value="addons://"/>
+=======
+						<include content="WidgetListCategories">
+>>>>>>> xbmc/Krypton
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="addonbrowser"/>
 							<param name="list_id" value="8900"/>
+<<<<<<< HEAD
 							<param name="visible" value="Integer.IsGreater(Container(8100).NumItems,0) | Integer.IsGreater(Container(8200).NumItems,0) | Integer.IsGreater(Container(8300).NumItems,0) | Integer.IsGreater(Container(8400).NumItems,0) | Integer.IsGreater(Container(8500).NumItems,0) | Integer.IsGreater(Container(8700).NumItems,0)"/>
+=======
+							<param name="visible" value="Integer.IsGreater(Container(8100).NumItems,0) | Integer.IsGreater(Container(8200).NumItems,0) | Integer.IsGreater(Container(8300).NumItems,0) | Integer.IsGreater(Container(8400).NumItems,0) | Integer.IsGreater(Container(8500).NumItems,0)"/>
+							<param name="addon_submenu" value="true"/>
+>>>>>>> xbmc/Krypton
 						</include>
 						<include content="WidgetListSquare">
 							<param name="content_path" value="addons://sources/video/"/>
@@ -668,8 +688,12 @@
 					</include>
 					<control type="grouplist" id="16001">
 						<include>WidgetGroupListCommon</include>
+<<<<<<< HEAD
 						<pagecontrol>16010</pagecontrol>
 						<include content="WidgetListCategories" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(home_no_categories_widget)">
+=======
+						<include content="WidgetListCategories" condition="Library.HasContent(musicvideos)">
+>>>>>>> xbmc/Krypton
 							<param name="content_path" value="library://music/musicvideos/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_target" value="videos"/>
@@ -747,6 +771,7 @@
 						</include>
 					</control>
 				</control>
+<<<<<<< HEAD
 				<control type="group" id="17000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
 					<include content="Visible_Right_Delayed">
@@ -774,6 +799,8 @@
 															</control>
 															-->
 				</control>
+=======
+>>>>>>> xbmc/Krypton
 				<control type="group" id="21000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),disc)</visible>
 					<include content="Visible_Right_Delayed">
@@ -1076,6 +1103,25 @@
 					<texture>icons/logo-text.png</texture>
 				</control>
 			</control>
+<<<<<<< HEAD
+=======
+			<control type="rss">
+				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<left>0</left>
+				<bottom>0</bottom>
+				<height>39</height>
+				<width>100%</width>
+				<font>font12</font>
+				<urlset>1</urlset>
+				<hitrect x="-100" y="0" w="1" h="1" />
+				<titlecolor>button_focus</titlecolor>
+				<textcolor>button_focus</textcolor>
+				<shadowcolor>text_shadow</shadowcolor>
+				<headlinecolor>FFC0C0C0</headlinecolor>
+			</control>
+>>>>>>> xbmc/Krypton
 		</control>
 	</controls>
 </window>

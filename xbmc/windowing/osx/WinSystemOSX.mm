@@ -1745,7 +1745,11 @@ void CWinSystemOSX::AnnounceOnLostDevice()
 void CWinSystemOSX::HandleOnResetDevice()
 {
   
+<<<<<<< HEAD
   int delay = CServiceBroker::GetSettings().GetInt("videoscreen.delayrefreshchange");
+=======
+  int delay = CSettings::GetInstance().GetInt("videoscreen.delayrefreshchange");
+>>>>>>> xbmc/Krypton
   if (delay > 0)
   {
     m_delayDispReset = true;

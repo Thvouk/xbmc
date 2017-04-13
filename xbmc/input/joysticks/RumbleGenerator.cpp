@@ -131,7 +131,11 @@ std::vector<std::string> CRumbleGenerator::GetMotors(const std::string& controll
   {
     for (const CControllerFeature& feature : controller->Layout().Features())
     {
+<<<<<<< HEAD
       if (feature.Type() == FEATURE_TYPE::MOTOR)
+=======
+      if (feature.Type() == JOYSTICK::FEATURE_TYPE::MOTOR)
+>>>>>>> xbmc/Krypton
         motors.push_back(feature.Name());
     }
   }

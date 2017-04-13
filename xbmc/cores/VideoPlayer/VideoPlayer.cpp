@@ -2376,6 +2376,7 @@ void CVideoPlayer::CheckAutoSceneSkip()
     {
       std::string strTimeString = StringUtils::SecondsToTimeString((cut.end - cut.start) / 1000, TIME_FORMAT_MM_SS);
       CGUIDialogKaiToast::QueueNotification(g_localizeStrings.Get(25011), strTimeString);
+<<<<<<< HEAD
 
       if (m_SkipCommercials)
       {
@@ -2384,6 +2385,16 @@ void CVideoPlayer::CheckAutoSceneSkip()
                   CEdl::MillisecondsToTimeString(cut.end).c_str(),
                   CEdl::MillisecondsToTimeString(clock).c_str());
 
+=======
+
+      if (m_SkipCommercials)
+      {
+        CLog::Log(LOGDEBUG, "%s - Clock in commercial break [%s - %s]: %s. Automatically skipping to end of commercial break",
+                  __FUNCTION__, CEdl::MillisecondsToTimeString(cut.start).c_str(),
+                  CEdl::MillisecondsToTimeString(cut.end).c_str(),
+                  CEdl::MillisecondsToTimeString(clock).c_str());
+
+>>>>>>> xbmc/Krypton
         CDVDMsgPlayerSeek::CMode mode;
         mode.time = cut.end;
         mode.backward = true;

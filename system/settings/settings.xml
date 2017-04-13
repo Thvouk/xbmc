@@ -581,6 +581,11 @@
     </category>
     <category id="pictures" label="14217" help="38105">
       <group id="1" label="108">
+        <setting id="pictures.usetags" type="boolean" label="38207" help="38208">
+          <level>1</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
         <setting id="slideshow.staytime" type="integer" label="12378" help="36312">
           <level>0</level>
           <default>5</default>
@@ -2686,7 +2691,11 @@
           <control type="button" format="action" />
         </setting>
         <setting id="input.rumblenotify" type="boolean" label="35053" help="35054">
+<<<<<<< HEAD
           <level>1</level>
+=======
+          <level>0</level>
+>>>>>>> xbmc/Krypton
           <dependencies>
             <dependency type="visible" on="property" name="HasRumbleFeature" />
           </dependencies>
@@ -2702,7 +2711,11 @@
           <control type="button" format="action" />
         </setting>
         <setting id="input.controllerpoweroff" type="boolean" label="35088" help="35089">
+<<<<<<< HEAD
           <level>1</level>
+=======
+          <level>0</level>
+>>>>>>> xbmc/Krypton
           <dependencies>
             <dependency type="visible" on="property" name="HasPowerOffFeature" />
           </dependencies>

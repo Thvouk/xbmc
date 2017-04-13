@@ -7,8 +7,12 @@
 			<width>256</width>
 			<height>256</height>
 			<texture>icons/settings/player.png</texture>
+<<<<<<< HEAD
 			<visible>SlideShow.IsVideo</visible>
 			<visible>![Player.Playing + Player.HasVideo] | SlideShow.IsPaused</visible>
+=======
+			<visible>SlideShow.IsVideo + [![Player.Playing + Player.HasVideo] | SlideShow.IsPaused]</visible>
+>>>>>>> xbmc/Krypton
 		</control>
 	</controls>
 </window>

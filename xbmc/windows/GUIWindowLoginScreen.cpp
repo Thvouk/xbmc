@@ -281,6 +281,12 @@ void CGUIWindowLoginScreen::LoadProfile(unsigned int profile)
 
   // stop PVR related services
   CServiceBroker::GetPVRManager().Unload();
+<<<<<<< HEAD
+=======
+
+  // stop audio DSP services with a blocking message
+  CServiceBroker::GetADSP().Deactivate();
+>>>>>>> xbmc/Krypton
 
   if (profile != 0 || !CProfilesManager::GetInstance().IsMasterProfile())
   {

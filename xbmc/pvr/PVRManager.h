@@ -55,12 +55,27 @@ namespace PVR
 {
   class CPVRClient;
   class CPVRClients;
+<<<<<<< HEAD
+=======
+  typedef std::shared_ptr<CPVRClients> CPVRClientsPtr;
+  class CPVRChannel;
+  typedef std::shared_ptr<CPVRChannel> CPVRChannelPtr;
+>>>>>>> xbmc/Krypton
   class CPVRChannelGroupsContainer;
+  typedef std::shared_ptr<CPVRChannelGroupsContainer> CPVRChannelGroupsContainerPtr;
   class CPVRChannelGroup;
   class CPVRRecordings;
+  typedef std::shared_ptr<CPVRRecordings> CPVRRecordingsPtr;
   class CPVRTimers;
+<<<<<<< HEAD
+=======
+  typedef std::shared_ptr<CPVRTimers> CPVRTimersPtr;
+  class CPVRTimerInfoTag;
+  typedef std::shared_ptr<CPVRTimerInfoTag> CPVRTimerInfoTagPtr;
+>>>>>>> xbmc/Krypton
   class CPVRGUIInfo;
   class CPVRDatabase;
+  typedef std::shared_ptr<CPVRDatabase> CPVRDatabasePtr;
   class CGUIWindowPVRCommon;
 
   enum ContinueLastChannelOnStartup
@@ -79,6 +94,18 @@ namespace PVR
     void Stop();
     void Clear();
 
+<<<<<<< HEAD
+=======
+  class CPVRManagerJobQueue
+  {
+  public:
+    CPVRManagerJobQueue();
+
+    void Start();
+    void Stop();
+    void Clear();
+
+>>>>>>> xbmc/Krypton
     void AppendJob(CJob * job);
     void ExecutePendingJobs();
     bool WaitForJobs(unsigned int milliSeconds);
@@ -90,7 +117,11 @@ namespace PVR
     bool m_bStopped;
   };
 
+<<<<<<< HEAD
   class CPVRManager : private CThread, public Observable, public ANNOUNCEMENT::IAnnouncer
+=======
+  class CPVRManager : public ISettingCallback, private CThread, public Observable, public ANNOUNCEMENT::IAnnouncer
+>>>>>>> xbmc/Krypton
   {
     friend class CPVRClients;
 
@@ -144,12 +175,15 @@ namespace PVR
      * @return The timers container.
      */
     CPVRClientsPtr Clients(void) const;
+<<<<<<< HEAD
 
     /*!
      * @brief Get access to the pvr gui actions.
      * @return The gui actions.
      */
     CPVRGUIActionsPtr GUIActions(void) const;
+=======
+>>>>>>> xbmc/Krypton
 
     /*!
      * @brief Init PVRManager.
@@ -162,17 +196,21 @@ namespace PVR
     void Reinit(void);
 
     /*!
+<<<<<<< HEAD
      * @brief Start the PVRManager, which loads all PVR data and starts some threads to update the PVR data.
      */
     void Start();
 
     /*!
+=======
+>>>>>>> xbmc/Krypton
      * @brief Stop PVRManager.
      */
     void Stop(void);
 
     /*!
      * @brief Stop PVRManager, unload data.
+<<<<<<< HEAD
      */
     void Unload();
 
@@ -190,6 +228,15 @@ namespace PVR
      * @brief Propagate event on system wake
      */
     void OnWake();
+=======
+     */
+    void Unload();
+
+    /*!
+     * @brief Stop PVRManager, unload data, unload addons.
+     */
+    void Shutdown();
+>>>>>>> xbmc/Krypton
 
     /*!
      * @brief Get the TV database.
@@ -534,6 +581,17 @@ namespace PVR
      */
     void PublishEvent(PVREvent state);
 
+<<<<<<< HEAD
+=======
+    /*!
+     * @brief Show an extended progress bar dialog.
+     * @param strTitle the title for the dialog.
+     * @return the handle that can be used to control the progress dialog.
+     */
+    CGUIDialogProgressBarHandle* ShowProgressDialog(const std::string &strTitle) const;
+
+  protected:
+>>>>>>> xbmc/Krypton
     /*!
      * @brief Show an extended progress bar dialog.
      * @param strTitle the title for the dialog.
@@ -598,9 +656,16 @@ namespace PVR
     bool ChannelUpDown(unsigned int *iNewChannelNumber, bool bPreview, bool bUp);
 
     /*!
+<<<<<<< HEAD
      * @brief Continue playback on the last played channel.
      */
     void TriggerContinueLastChannel(void);
+=======
+     * @brief Continue playback on the last channel if it was stored in the database.
+     * @return True if playback was continued, false otherwise.
+     */
+    bool ContinueLastChannel(void);
+>>>>>>> xbmc/Krypton
 
     enum ManagerState
     {
@@ -627,12 +692,19 @@ namespace PVR
     CPVRTimersPtr                  m_timers;                      /*!< pointer to the timers container */
     CPVRClientsPtr                 m_addons;                      /*!< pointer to the pvr addon container */
     std::unique_ptr<CPVRGUIInfo>   m_guiInfo;                     /*!< pointer to the guiinfo data */
+<<<<<<< HEAD
     CPVRGUIActionsPtr              m_guiActions;                  /*!< pointer to the pvr gui actions */
+=======
+>>>>>>> xbmc/Krypton
     //@}
 
     CPVRManagerJobQueue             m_pendingUpdates;              /*!< vector of pending pvr updates */
 
+<<<<<<< HEAD
     CFileItemPtr                    m_currentFile;                 /*!< the PVR file that is currently playing */
+=======
+    CFileItem *                     m_currentFile;                 /*!< the PVR file that is currently playing */
+>>>>>>> xbmc/Krypton
     CPVRDatabasePtr                 m_database;                    /*!< the database for all PVR related data */
     CCriticalSection                m_critSection;                 /*!< critical section for all changes to this class, except for changes to triggers */
     bool                            m_bFirstStart;                 /*!< true when the PVR manager was started first, false otherwise */
@@ -649,6 +721,34 @@ namespace PVR
 
     std::atomic_bool m_isChannelPreview;
     CEventSource<PVREvent> m_events;
+<<<<<<< HEAD
+=======
+
+    // settings cache
+    bool m_bSettingPowerManagementEnabled; // SETTING_PVRPOWERMANAGEMENT_ENABLED
+    std::string m_strSettingWakeupCommand; // SETTING_PVRPOWERMANAGEMENT_SETWAKEUPCMD
+  };
+
+  class CPVRStartupJob : public CJob
+  {
+  public:
+    CPVRStartupJob(void) {}
+    virtual ~CPVRStartupJob() {}
+    virtual const char *GetType() const { return "pvr-startup"; }
+
+    virtual bool DoWork();
+  };
+
+  class CPVREpgsCreateJob : public CJob
+  {
+  public:
+    CPVREpgsCreateJob(void) {}
+    virtual ~CPVREpgsCreateJob() {}
+    virtual const char *GetType() const { return "pvr-create-epgs"; }
+
+    virtual bool DoWork();
+  };
+>>>>>>> xbmc/Krypton
 
     CPVRActionListener m_actionListener;
     CPVRSettings m_settings;

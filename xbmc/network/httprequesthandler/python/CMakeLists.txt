@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 if(MICROHTTPD_FOUND AND PYTHON_FOUND)
+=======
+if(MICROHTTPD_FOUND)
+>>>>>>> xbmc/Krypton
   set(SOURCES HTTPPythonInvoker.cpp
               HTTPPythonWsgiInvoker.cpp)
 

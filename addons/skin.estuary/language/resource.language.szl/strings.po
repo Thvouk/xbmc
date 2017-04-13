@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: Estuary
 # Addon id: skin.estuary
-# Addon Provider: phil65, Piers
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -112,6 +112,13 @@ msgctxt "#31025"
 msgid "No favourites found. You can add any item from media views to this list by using the context menu."
 msgstr "Niy ma wertownych. Możesz przidŏć leda jakõ pozycyjõ do tego wykŏzu z poziōmu widzikōw mydiōw, bez myni kōntekstowe."
 
+<<<<<<< HEAD
+=======
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Timeshift"
+
+>>>>>>> xbmc/Krypton
 msgctxt "#31028"
 msgid "Show fanart"
 msgstr "Pokŏż fototapetã"
@@ -279,6 +286,7 @@ msgstr "Dostympne skupiny"
 msgctxt "#31090"
 msgid "Search trailer"
 msgstr "Szukej trailera"
+<<<<<<< HEAD
 
 msgctxt "#31092"
 msgid "Video menu"
@@ -288,6 +296,17 @@ msgctxt "#31093"
 msgid "Show weather info in top bar"
 msgstr "Ukazuj terŏźnõ pogodã we wiyrchnij lajście"
 
+=======
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Myni wideo"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Ukazuj terŏźnõ pogodã we wiyrchnij lajście"
+
+>>>>>>> xbmc/Krypton
 msgctxt "#31095"
 msgid "Use slide animations"
 msgstr "Używej animacyje chynaniŏ"

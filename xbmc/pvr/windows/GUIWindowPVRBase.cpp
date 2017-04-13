@@ -90,7 +90,11 @@ void CGUIWindowPVRBase::UpdateSelectedItemPath()
 
 void CGUIWindowPVRBase::RegisterObservers(void)
 {
+<<<<<<< HEAD
   CServiceBroker::GetPVRManager().RegisterObserver(this);
+=======
+  g_PVRManager.RegisterObserver(this);
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_critSection);
   if (m_channelGroup)
@@ -104,7 +108,11 @@ void CGUIWindowPVRBase::UnregisterObservers(void)
     if (m_channelGroup)
       m_channelGroup->UnregisterObserver(this);
   }
+<<<<<<< HEAD
   CServiceBroker::GetPVRManager().UnregisterObserver(this);
+=======
+  g_PVRManager.UnregisterObserver(this);
+>>>>>>> xbmc/Krypton
 };
 
 void CGUIWindowPVRBase::Notify(const Observable &obs, const ObservableMessage msg)
@@ -321,6 +329,52 @@ void CGUIWindowPVRBase::SetChannelGroup(const CPVRChannelGroupPtr &group, bool b
     return;
 
   CPVRChannelGroupPtr channelGroup;
+<<<<<<< HEAD
+=======
+  {
+    CSingleLock lock(m_critSection);
+    if (m_channelGroup != group)
+    {
+      if (m_channelGroup)
+        m_channelGroup->UnregisterObserver(this);
+      m_channelGroup = group;
+      // we need to register the window to receive changes from the new group
+      m_channelGroup->RegisterObserver(this);
+      channelGroup = m_channelGroup;
+    }
+  }
+
+  if (bUpdate && channelGroup)
+  {
+    g_PVRManager.SetPlayingGroup(channelGroup);
+    Update(GetDirectoryPath());
+  }
+}
+
+bool CGUIWindowPVRBase::PlayFile(CFileItem *item, bool bPlayMinimized /* = false */, bool bCheckResume /* = true */)
+{
+  if (item->m_bIsFolder)
+  {
+    return false;
+  }
+
+  CPVRChannelPtr channel = item->HasPVRChannelInfoTag() ? item->GetPVRChannelInfoTag() : CPVRChannelPtr();
+  if (item->GetPath() == g_application.CurrentFile() ||
+      (channel && channel->HasRecording() && channel->GetRecording()->GetPath() == g_application.CurrentFile()))
+  {
+    CGUIMessage msg(GUI_MSG_FULLSCREEN, 0, GetID());
+    g_windowManager.SendMessage(msg);
+    return true;
+  }
+
+  CMediaSettings::GetInstance().SetVideoStartWindowed(bPlayMinimized);
+
+  if (item->HasPVRRecordingInfoTag())
+  {
+    return PlayRecording(item, bPlayMinimized, bCheckResume);
+  }
+  else
+>>>>>>> xbmc/Krypton
   {
     CSingleLock lock(m_critSection);
     if (m_channelGroup != group)

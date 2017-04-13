@@ -28,7 +28,10 @@
 #include <array>
 #include <cmath>
 
+<<<<<<< HEAD
 using namespace KODI;
+=======
+>>>>>>> xbmc/Krypton
 using namespace JOYSTICK;
 
 CGUIDialogNewJoystick* const CInputHandling::m_dialog = new CGUIDialogNewJoystick;

@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: Estuary
 # Addon id: skin.estuary
-# Addon Provider: phil65, Piers
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -112,6 +112,7 @@ msgctxt "#31025"
 msgid "No favourites found. You can add any item from media views to this list by using the context menu."
 msgstr "No s'ha trobat cap preferit. Podeu afegir qualsevol element des de les vistes dels mitjans a aquesta llista mitjançant el menú contextual."
 
+<<<<<<< HEAD
 msgctxt "#31028"
 msgid "Show fanart"
 msgstr "Mostr el fanart"
@@ -119,6 +120,19 @@ msgstr "Mostr el fanart"
 msgctxt "#31029"
 msgid "Last logged in"
 msgstr "Última entrada"
+=======
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Salts en el temps"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Mostra el fanart"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Última autenticació"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31030"
 msgid "System memory usage"
@@ -138,7 +152,11 @@ msgstr "La vostra valoració"
 
 msgctxt "#31034"
 msgid "Extended info"
+<<<<<<< HEAD
 msgstr "Info estesa"
+=======
+msgstr "Informació estesa"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31035"
 msgid "Pages"
@@ -210,11 +228,19 @@ msgstr "Vés a la llista de reproducció"
 
 msgctxt "#31057"
 msgid "Show login screen on startup"
+<<<<<<< HEAD
 msgstr "Mostra la pantalla d'inici de sessió a l'inici"
 
 msgctxt "#31058"
 msgid "Automatic Login on startup"
 msgstr "Inici de sessió automàtic a l'inici"
+=======
+msgstr "Mostra la pantalla d'autenticació a l'inici"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Autenticació automàtica a l'inici"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31061"
 msgid "Main menu items"
@@ -279,6 +305,7 @@ msgstr "Ajust del complement de lletres"
 msgctxt "#31084"
 msgid "Visualisation settings"
 msgstr "Ajusts de la visualització"
+<<<<<<< HEAD
 
 msgctxt "#31089"
 msgid "Available groups"
@@ -296,6 +323,25 @@ msgctxt "#31093"
 msgid "Show weather info in top bar"
 msgstr "Mostra la informació del temps a la barra superior"
 
+=======
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Grups disponibles"
+
+msgctxt "#31090"
+msgid "Search trailer"
+msgstr "Cerca el tràiler"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Menú del vídeo"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Mostra la informació del temps a la barra superior"
+
+>>>>>>> xbmc/Krypton
 msgctxt "#31095"
 msgid "Use slide animations"
 msgstr "Utilitza animacions lliscants"
@@ -310,7 +356,15 @@ msgstr "Opcions del canal"
 
 msgctxt "#31098"
 msgid "Select your Kodi user profile[CR]to login and continue"
+<<<<<<< HEAD
 msgstr "Seleccioneu el vostre perfil d'usuari de Kodi[CR]per entrar i continuar"
+=======
+msgstr "Seleccioneu el vostre perfil d'usuari de Kodi[CR]per autenticar-vos i continuar"
+
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Mur d'icones"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31100"
 msgid "Shift"
@@ -470,7 +524,11 @@ msgstr "Velocitat de reproducció"
 
 msgctxt "#31143"
 msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+<<<<<<< HEAD
 msgstr "Encara no heu configurat el PVR. Per utilitzar el PVR, trieu un complement  de client PVR i configureu-lo. Consulteu http://kodi.wiki/view/PVR per a més detalls."
+=======
+msgstr "Encara no heu configurat el PVR. Per utilitzar el PVR, trieu un complement de client PVR i configureu-lo. Consulteu http://kodi.wiki/view/PVR per a més detalls."
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31144"
 msgid "Enter add-on browser"
@@ -496,6 +554,13 @@ msgctxt "#31152"
 msgid "Random music videos"
 msgstr "Vídeos musicals aleatoris"
 
+<<<<<<< HEAD
+=======
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "No teniu cap complement d'aquest tipus instal·lat. Entreu al navegador de complements per baixar complements creats per la nostra comunitat."
+
+>>>>>>> xbmc/Krypton
 msgctxt "#31154"
 msgid "Press OK to switch between locations"
 msgstr "Premeu d'acord per canviar entre ubicacions"
@@ -516,6 +581,13 @@ msgctxt "#31158"
 msgid "Touch mode"
 msgstr "Mode tàctil"
 
+<<<<<<< HEAD
+=======
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Artwork"
+
+>>>>>>> xbmc/Krypton
 msgctxt "#31160"
 msgid "Show media flags"
 msgstr "Mostra els indicadors multimèdia"

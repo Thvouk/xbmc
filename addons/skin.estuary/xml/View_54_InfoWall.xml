@@ -255,7 +255,11 @@
 				</control>
 				<control type="textbox">
 					<left>40</left>
+<<<<<<< HEAD
 					<top>244</top>
+=======
+					<top>250</top>
+>>>>>>> xbmc/Krypton
 					<width>242</width>
 					<height>120</height>
 					<font>font27</font>
@@ -266,9 +270,15 @@
 					<visible>!ListItem.IsParentFolder</visible>
 				</control>
 				<control type="image">
+<<<<<<< HEAD
 					<left>24</left>
 					<top>-1</top>
 					<width>272</width>
+=======
+					<left>26</left>
+					<top>0</top>
+					<width>270</width>
+>>>>>>> xbmc/Krypton
 					<height>270</height>
 					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
 					<aspectratio>scale</aspectratio>

@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 if (NOT MIR_FOUND AND NOT X_FOUND)
   if(OPENGLES_FOUND OR AML_FOUND OR IMX_FOUND OR MMAL_FOUND)
     set(SOURCES EGLWrapper.cpp)
+=======
+if(OPENGLES_FOUND OR AML_FOUND OR IMX_FOUND OR MMAL_FOUND)
+  set(SOURCES EGLWrapper.cpp)
+>>>>>>> xbmc/Krypton
 
     set(HEADERS EGLNativeType.h
                 EGLQuirks.h
@@ -32,6 +37,11 @@ if(MMAL_FOUND)
   list(APPEND HEADERS EGLNativeTypeRaspberryPI.h)
   list(APPEND SOURCES VideoSyncPi.cpp)
   list(APPEND HEADERS VideoSyncPi.h)
+endif()
+
+if(IMX_FOUND)
+  list(APPEND SOURCES EGLNativeTypeIMX.cpp)
+  list(APPEND HEADERS EGLNativeTypeIMX.h)
 endif()
 
 if(IMX_FOUND)

@@ -284,7 +284,11 @@ bool CPVRChannelGroups::LoadUserDefinedChannelGroups(void)
 
 bool CPVRChannelGroups::Load(void)
 {
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
   if (!database)
     return false;
 
@@ -548,12 +552,20 @@ bool CPVRChannelGroups::DeleteGroup(const CPVRChannelGroup &group)
   }
 
   if (playingGroup)
+<<<<<<< HEAD
     CServiceBroker::GetPVRManager().SetPlayingGroup(playingGroup);
+=======
+    g_PVRManager.SetPlayingGroup(playingGroup);
+>>>>>>> xbmc/Krypton
 
   if (group.GroupID() > 0)
   {
     // delete the group from the database
+<<<<<<< HEAD
     const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+    const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
     return database ? database->Delete(group) : false;
   }
   return bFound;

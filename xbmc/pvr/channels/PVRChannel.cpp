@@ -145,7 +145,11 @@ void CPVRChannel::Serialize(CVariant& value) const
 bool CPVRChannel::Delete(void)
 {
   bool bReturn = false;
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
   if (!database)
     return bReturn;
 
@@ -219,7 +223,11 @@ bool CPVRChannel::Persist()
       return true;
   }
 
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
   if (database)
   {
     bool bReturn = database->Persist(*this) && database->CommitInsertQueries();
@@ -370,7 +378,11 @@ bool CPVRChannel::SetLastWatched(time_t iLastWatched)
       m_iLastWatched = iLastWatched;
   }
 
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
   if (database)
     return database->UpdateLastWatched(*this);
 

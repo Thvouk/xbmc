@@ -14778,7 +14778,11 @@ msgctxt "#24095"
 msgid "Local package cache"
 msgstr ""
 
+<<<<<<< HEAD
 #: addons/skin.estuary/xml/DialogAddonInfo.xml
+=======
+#: addons/skin.estuary/1080i/DialogAddonInfo.xml
+>>>>>>> xbmc/Krypton
 msgctxt "#24096"
 msgid "Add-on has been marked broken in repository."
 msgstr ""
@@ -16488,6 +16492,7 @@ msgctxt "#35019"
 msgid "Ignore input"
 msgstr ""
 
+<<<<<<< HEAD
 #. Help text of the dialog to detect analog buttons on controllers. {0:s} - list of detected axes
 #: xbmc/games/controllers/dialogs/GUIDialogAxisDetection.cpp
 msgctxt "#35020"
@@ -16495,6 +16500,9 @@ msgid "Press all analog buttons now to detect them:[CR][CR]{0:s}"
 msgstr ""
 
 #empty strings from id 35021 to 35048
+=======
+#empty strings from id 35020 to 35048
+>>>>>>> xbmc/Krypton
 
 #. Name of game add-ons category
 #: xbmc/addons/Addon.cpp

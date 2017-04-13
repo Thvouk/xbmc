@@ -4253,13 +4253,17 @@ bool CMusicDatabase::GetSongsFullByWhere(const std::string &baseDir, const Filte
     std::string strSQLExtra;
     if (!BuildSQL(strSQLExtra, extFilter, strSQLExtra))
       return false;
-    
+
     // Count number of songs that satisfy selection criteria
     total = (int)strtol(GetSingleValue("SELECT COUNT(1) FROM songview " + strSQLExtra, m_pDS).c_str(), NULL, 10);
 
     // Apply any limiting directly in SQL if there is either no special sorting or random sort
     // When limited, random sort is also applied in SQL
+<<<<<<< HEAD
     bool limitedInSQL = extFilter.limit.empty() && 
+=======
+    bool limitedInSQL = extFilter.limit.empty() &&
+>>>>>>> xbmc/Krypton
       (sortDescription.sortBy == SortByNone || sortDescription.sortBy == SortByRandom) &&
       (sortDescription.limitStart > 0 || sortDescription.limitEnd > 0);
     if (limitedInSQL)
@@ -4277,11 +4281,11 @@ bool CMusicDatabase::GetSongsFullByWhere(const std::string &baseDir, const Filte
       if (limitedInSQL)
         //Apply where clause, limits and random order to songview, then join as multiple records in result set per song
         strSQL = "SELECT sv.*, songartistview.* "
-          "FROM (SELECT songview.* FROM songview " + strSQLExtra + ") AS sv "
-          "JOIN songartistview ON songartistview.idsong = sv.idsong ";
+        "FROM (SELECT songview.* FROM songview " + strSQLExtra + ") AS sv "
+        "JOIN songartistview ON songartistview.idsong = sv.idsong ";
       else
         strSQL = "SELECT songview.*, songartistview.* "
-          "FROM songview JOIN songartistview ON songartistview.idsong = songview.idsong " + strSQLExtra;
+        "FROM songview JOIN songartistview ON songartistview.idsong = songview.idsong " + strSQLExtra;
       strSQL += " ORDER BY songartistview.idsong, songartistview.idRole, songartistview.iOrder";
     }
     else
@@ -4324,7 +4328,7 @@ bool CMusicDatabase::GetSongsFullByWhere(const std::string &baseDir, const Filte
     {
       unsigned int targetRow = (unsigned int)i.at(FieldRow).asInteger();
       const dbiplus::sql_record* const record = data.at(targetRow);
-      
+
       try
       {
         if (songId != record->at(song_idSong).get_asInt())
@@ -4332,7 +4336,7 @@ bool CMusicDatabase::GetSongsFullByWhere(const std::string &baseDir, const Filte
           if (songId > 0 && !artistCredits.empty())
           {
             //Store artist credits for previous song
-            GetFileItemFromArtistCredits(artistCredits, items[items.Size()-1].get());
+            GetFileItemFromArtistCredits(artistCredits, items[items.Size() - 1].get());
             artistCredits.clear();
           }
           songId = record->at(song_idSong).get_asInt();

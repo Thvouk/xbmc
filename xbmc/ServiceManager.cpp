@@ -24,7 +24,10 @@
 #include "cores/AudioEngine/Engines/ActiveAE/ActiveAE.h"
 #include "cores/DataCacheCore.h"
 #include "games/GameServices.h"
+<<<<<<< HEAD
 #include "peripherals/Peripherals.h"
+=======
+>>>>>>> xbmc/Krypton
 #include "PlayListPlayer.h"
 #include "utils/log.h"
 #include "interfaces/AnnouncementManager.h"
@@ -36,6 +39,15 @@
 CServiceManager::CServiceManager() :
   m_gameServices(new GAME::CGameServices),
   m_peripherals(new PERIPHERALS::CPeripherals)
+{
+}
+
+CServiceManager::~CServiceManager()
+{
+}
+
+CServiceManager::CServiceManager() :
+  m_gameServices(new GAME::CGameServices)
 {
 }
 
@@ -129,11 +141,18 @@ bool CServiceManager::Init3()
 void CServiceManager::Deinit()
 {
   m_gameServices->Deinit();
+<<<<<<< HEAD
   m_peripherals.reset();
   m_contextMenuManager.reset();
   m_binaryAddonCache.reset();
   if (m_PVRManager)
     m_PVRManager->Deinit();
+=======
+  m_contextMenuManager.reset();
+  m_binaryAddonCache.reset();
+  if (m_PVRManager)
+    m_PVRManager->Shutdown();
+>>>>>>> xbmc/Krypton
   m_PVRManager.reset();
   m_addonMgr.reset();
 #ifdef HAS_PYTHON
@@ -197,21 +216,27 @@ PLAYLIST::CPlayListPlayer& CServiceManager::GetPlaylistPlayer()
   return *m_playlistPlayer;
 }
 
+<<<<<<< HEAD
 CSettings& CServiceManager::GetSettings()
 {
   return *m_settings;
 }
 
+=======
+>>>>>>> xbmc/Krypton
 GAME::CGameServices& CServiceManager::GetGameServices()
 {
   return *m_gameServices;
 }
 
+<<<<<<< HEAD
 PERIPHERALS::CPeripherals& CServiceManager::GetPeripherals()
 {
   return *m_peripherals;
 }
 
+=======
+>>>>>>> xbmc/Krypton
 // deleters for unique_ptr
 void CServiceManager::delete_dataCacheCore::operator()(CDataCacheCore *p) const
 {

@@ -3,7 +3,10 @@ Version=1.0
 Name=@APP_NAME@
 GenericName=Media Center
 Comment=Manage and view your media
+<<<<<<< HEAD:tools/Linux/kodi.desktop.in
 Comment[ru]=Просмотр и управление мультимедиа
+=======
+>>>>>>> xbmc/Krypton:tools/Linux/kodi.desktop.in
 Exec=@APP_NAME_LC@
 Icon=@APP_NAME_LC@
 Terminal=false

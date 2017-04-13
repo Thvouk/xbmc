@@ -349,7 +349,11 @@ bool CEpgInfoTag::IsParentalLocked() const
     channel = m_pvrChannel;
   }
 
+<<<<<<< HEAD
   return channel && CServiceBroker::GetPVRManager().IsParentalLocked(channel);
+=======
+  return channel && g_PVRManager.IsParentalLocked(channel);
+>>>>>>> xbmc/Krypton
 }
 
 std::string CEpgInfoTag::Title(bool bOverrideParental /* = false */) const

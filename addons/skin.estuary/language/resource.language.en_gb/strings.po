@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: Estuary
 # Addon id: skin.estuary
-# Addon Provider: phil65, Piers
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -16,7 +16,11 @@ msgstr ""
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+<<<<<<< HEAD
 #: /xml/Home.xml /xml/DialogSeekBar.xml
+=======
+#: /xml/Home.xml /xml/DialogFullScreenInfo.xml
+>>>>>>> xbmc/Krypton
 msgctxt "#31000"
 msgid "Now playing"
 msgstr ""
@@ -56,10 +60,14 @@ msgctxt "#31007"
 msgid "Unwatched movies"
 msgstr ""
 
+<<<<<<< HEAD
 #: /xml/SkinSettings.xml
 msgctxt "#31008"
 msgid "Enable category widgets"
 msgstr ""
+=======
+#empty string with id 31008
+>>>>>>> xbmc/Krypton
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31009"
@@ -139,10 +147,14 @@ msgctxt "#31023"
 msgid "Viewtype"
 msgstr ""
 
+<<<<<<< HEAD
 #: /xml/SkinSettings.xml
 msgctxt "#31024"
 msgid "Choose rating to display for media items"
 msgstr ""
+=======
+#empty string with id 31024
+>>>>>>> xbmc/Krypton
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31025"
@@ -154,6 +166,11 @@ msgctxt "#31026"
 msgid "Timeshift"
 msgstr ""
 
+<<<<<<< HEAD
+=======
+#empty string with id 31027
+
+>>>>>>> xbmc/Krypton
 #: /xml/DialogAlbumInfo.xml /xml/DialogVideoInfo.xml
 msgctxt "#31028"
 msgid "Show fanart"
@@ -594,8 +611,18 @@ msgctxt "#31131"
 msgid "Choose skin fanart pack"
 msgstr ""
 
+<<<<<<< HEAD
 #empty strings from id 31132 to 31133
 
+=======
+#: /xml/MyVideoNav.xml /xml/View_502_FanArt.xml
+msgctxt "#31132"
+msgid "min"
+msgstr ""
+
+#empty string with id 31133
+
+>>>>>>> xbmc/Krypton
 #: /xml/DialogSeekBar.xml
 msgctxt "#31134"
 msgid "Remaining"

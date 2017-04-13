@@ -44,9 +44,13 @@ using namespace PVR;
 using namespace EPG;
 
 CGUIWindowPVRGuide::CGUIWindowPVRGuide(bool bRadio) :
+<<<<<<< HEAD
   CGUIWindowPVRBase(bRadio, bRadio ? WINDOW_RADIO_GUIDE : WINDOW_TV_GUIDE, "MyPVRGuide.xml"),
   CPVRChannelNumberInputHandler(1000),
   m_bChannelSelectionRestored(false)
+=======
+  CGUIWindowPVRBase(bRadio, bRadio ? WINDOW_RADIO_GUIDE : WINDOW_TV_GUIDE, "MyPVRGuide.xml")
+>>>>>>> xbmc/Krypton
 {
   m_bRefreshTimelineItems = false;
   g_EpgContainer.RegisterObserver(this);
@@ -109,8 +113,11 @@ void CGUIWindowPVRGuide::OnDeinitWindow(int nextWindowID)
 {
   StopRefreshTimelineItemsThread();
 
+<<<<<<< HEAD
   m_bChannelSelectionRestored = false;
 
+=======
+>>>>>>> xbmc/Krypton
   {
     CSingleLock lock(m_critSection);
     if (m_vecItems && !m_newTimeline)
@@ -139,10 +146,18 @@ void CGUIWindowPVRGuide::StopRefreshTimelineItemsThread()
 
 void CGUIWindowPVRGuide::Notify(const Observable &obs, const ObservableMessage msg)
 {
+<<<<<<< HEAD
   if (msg == ObservableMessageEpg ||
       msg == ObservableMessageEpgContainer ||
       msg == ObservableMessageChannelGroupReset ||
       msg == ObservableMessageChannelGroup)
+=======
+  if (m_viewControl.GetCurrentControl() == GUIDE_VIEW_TIMELINE &&
+      (msg == ObservableMessageEpg ||
+       msg == ObservableMessageEpgContainer ||
+       msg == ObservableMessageChannelGroupReset ||
+       msg == ObservableMessageChannelGroup))
+>>>>>>> xbmc/Krypton
   {
     CSingleLock lock(m_critSection);
     m_bRefreshTimelineItems = true;
@@ -461,8 +476,23 @@ bool CGUIWindowPVRGuide::RefreshTimelineItems()
     m_bRefreshTimelineItems = false;
   }
 
+<<<<<<< HEAD
   if (bRefreshTimelineItems)
   {
+=======
+bool CGUIWindowPVRGuide::RefreshTimelineItems()
+{
+  bool bRefreshTimelineItems;
+  {
+    CSingleLock lock(m_critSection);
+
+    bRefreshTimelineItems = m_bRefreshTimelineItems;
+    m_bRefreshTimelineItems = false;
+  }
+
+  if (bRefreshTimelineItems)
+  {
+>>>>>>> xbmc/Krypton
     CGUIEPGGridContainer* epgGridContainer = GetGridControl();
     if (epgGridContainer)
     {
@@ -505,6 +535,41 @@ bool CGUIWindowPVRGuide::RefreshTimelineItems()
   return false;
 }
 
+<<<<<<< HEAD
+=======
+void CGUIWindowPVRGuide::GetViewTimelineItems(CFileItemList &items)
+{
+  bool bRefreshTimelineItems = false;
+
+  {
+    CSingleLock lock(m_critSection);
+
+    if (m_cachedChannelGroup && *m_cachedChannelGroup != *GetChannelGroup())
+    {
+      // channel group change and not very first open of this window. force immediate update.
+      m_bRefreshTimelineItems = true;
+      bRefreshTimelineItems = true;
+    }
+  }
+
+  // never call DoRefresh with locked mutex!
+  if (bRefreshTimelineItems)
+    m_refreshTimelineItemsThread->DoRefresh();
+
+  {
+    CSingleLock lock(m_critSection);
+
+    // Note: no need to do anything if no new data available. items always contains previous data.
+    if (m_newTimeline)
+    {
+      items.RemoveDiscCache(GetID());
+      items.Assign(*m_newTimeline, false);
+      m_newTimeline.reset();
+    }
+  }
+}
+
+>>>>>>> xbmc/Krypton
 bool CGUIWindowPVRGuide::OnContextButtonBegin(CFileItem *item, CONTEXT_BUTTON button)
 {
   bool bReturn = false;
@@ -582,8 +647,27 @@ void CPVRRefreshTimelineItemsThread::Stop()
   m_ready.Set(); // wake up the worker thread to let it exit
 }
 
+<<<<<<< HEAD
 void CPVRRefreshTimelineItemsThread::DoRefresh()
 {
+=======
+CPVRRefreshTimelineItemsThread::CPVRRefreshTimelineItemsThread(CGUIWindowPVRGuide *pGuideWindow)
+: CThread("epg-grid-refresh-timeline-items"),
+  m_pGuideWindow(pGuideWindow),
+  m_ready(true),
+  m_done(false)
+{
+}
+
+void CPVRRefreshTimelineItemsThread::Stop()
+{
+  StopThread(false);
+  m_ready.Set(); // wake up the worker thread to let it exit
+}
+
+void CPVRRefreshTimelineItemsThread::DoRefresh()
+{
+>>>>>>> xbmc/Krypton
   m_ready.Set(); // wake up the worker thread
   m_done.Reset();
   CGUIDialogBusy::WaitOnEvent(m_done, 100, false);

@@ -40,7 +40,10 @@
 #include "utils/StringUtils.h"
 #include "platform/win32/crts_caller.h"
 #include "CompileInfo.h"
+<<<<<<< HEAD
 #include "platform/win32/CharsetConverter.h"
+=======
+>>>>>>> xbmc/Krypton
 
 #include <cassert>
 

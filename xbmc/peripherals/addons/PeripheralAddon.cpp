@@ -577,6 +577,9 @@ bool CPeripheralAddon::GetFeatures(const CPeripheral* device,
 
   ADDON::Joystick::FreeStruct(joystickStruct);
 
+
+  ADDON::Joystick::FreeStruct(joystickStruct);
+
   if (retVal == PERIPHERAL_NO_ERROR)
   {
     for (unsigned int i = 0; i < featureCount; i++)
@@ -623,6 +626,10 @@ bool CPeripheralAddon::MapFeature(const CPeripheral* device,
   ADDON::Joystick::FreeStruct(joystickStruct);
   ADDON::JoystickFeature::FreeStruct(addonFeature);
 
+
+  ADDON::Joystick::FreeStruct(joystickStruct);
+  ADDON::JoystickFeature::FreeStruct(addonFeature);
+
   return retVal == PERIPHERAL_NO_ERROR;
 }
 
@@ -649,6 +656,8 @@ bool CPeripheralAddon::GetIgnoredPrimitives(const CPeripheral* device, Primitive
 
   LogError(retVal = m_struct.GetIgnoredPrimitives(&joystickStruct, &primitiveCount,
                                                       &pPrimitives), "GetIgnoredPrimitives()");
+
+  ADDON::Joystick::FreeStruct(joystickStruct);
 
   ADDON::Joystick::FreeStruct(joystickStruct);
 
@@ -716,6 +725,8 @@ void CPeripheralAddon::SaveButtonMap(const CPeripheral* device)
 
   ADDON::Joystick::FreeStruct(joystickStruct);
 
+  ADDON::Joystick::FreeStruct(joystickStruct);
+
   // Notify observing button maps
   RefreshButtonMaps(device->DeviceName());
 }
@@ -736,7 +747,12 @@ void CPeripheralAddon::RevertButtonMap(const CPeripheral* device)
   JOYSTICK_INFO joystickStruct;
   joystickInfo.ToStruct(joystickStruct);
 
+<<<<<<< HEAD
   m_struct.RevertButtonMap(&joystickStruct);
+=======
+  try { m_pStruct->RevertButtonMap(&joystickStruct); }
+  catch (std::exception &e) { LogException(e, "RevertMap()"); return; }
+>>>>>>> xbmc/Krypton
 
   ADDON::Joystick::FreeStruct(joystickStruct);
 }
@@ -753,6 +769,8 @@ void CPeripheralAddon::ResetButtonMap(const CPeripheral* device, const std::stri
   joystickInfo.ToStruct(joystickStruct);
 
   m_struct.ResetButtonMap(&joystickStruct, strControllerId.c_str());
+
+  ADDON::Joystick::FreeStruct(joystickStruct);
 
   ADDON::Joystick::FreeStruct(joystickStruct);
 

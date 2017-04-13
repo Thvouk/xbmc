@@ -90,6 +90,36 @@ namespace PVR
      * @return true if group could be set, false otherwise.
      */
     bool InitChannelGroup(void);
+<<<<<<< HEAD
+=======
+
+    /*!
+     * @brief Get the channel group for this window.
+     * @return the group or null, if no group set.
+     */
+   virtual CPVRChannelGroupPtr GetChannelGroup(void);
+
+    /*!
+     * @brief Set a new channel group, start listening to this group, optionally update window content.
+     * @param group The new group.
+     * @param bUpdate if true, window content will be updated.
+     */
+    void SetChannelGroup(const CPVRChannelGroupPtr &group, bool bUpdate = true);
+
+    virtual bool ActionShowTimerRule(CFileItem *item);
+    virtual bool ActionToggleTimer(CFileItem *item);
+    virtual bool ActionPlayChannel(CFileItem *item);
+    virtual bool ActionPlayEpg(CFileItem *item, bool bPlayRecording);
+    virtual bool ActionDeleteChannel(CFileItem *item);
+    virtual bool ActionInputChannelNumber(int input);
+
+    virtual bool PlayFile(CFileItem *item, bool bPlayMinimized = false, bool bCheckResume = true);
+    virtual void ShowEPGInfo(CFileItem *item);
+    virtual void ShowRecordingInfo(CFileItem *item);
+    virtual bool UpdateEpgForChannel(CFileItem *item);
+    virtual void UpdateSelectedItemPath();
+    static bool CheckResumeRecording(CFileItem *item);
+>>>>>>> xbmc/Krypton
 
     /*!
      * @brief Get the channel group for this window.

@@ -241,6 +241,11 @@ namespace JOYSTICK
      */
     bool MapPrimitive(const CDriverPrimitive& primitive);
 
+<<<<<<< HEAD
+=======
+    bool IsDefaultController();
+
+>>>>>>> xbmc/Krypton
   private:
     bool IsMapping() const;
 

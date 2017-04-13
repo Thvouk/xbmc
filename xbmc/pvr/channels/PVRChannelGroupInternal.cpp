@@ -221,7 +221,11 @@ int CPVRChannelGroupInternal::GetMembers(CFileItemList &results, bool bGroupMemb
 
 int CPVRChannelGroupInternal::LoadFromDb(bool bCompress /* = false */)
 {
+<<<<<<< HEAD
   const CPVRDatabasePtr database(CServiceBroker::GetPVRManager().GetTVDatabase());
+=======
+  const CPVRDatabasePtr database(g_PVRManager.GetTVDatabase());
+>>>>>>> xbmc/Krypton
   if (!database)
     return -1;
 

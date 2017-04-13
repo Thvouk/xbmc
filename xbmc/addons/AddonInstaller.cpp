@@ -628,7 +628,11 @@ bool CAddonInstallJob::DoWork()
       database.SetLastUpdated(m_addon->ID(), CDateTime::GetCurrentDateTime());
   }
 
+<<<<<<< HEAD
   bool notify = (CServiceBroker::GetSettings().GetBool(CSettings::SETTING_ADDONS_NOTIFICATIONS)
+=======
+  bool notify = (CSettings::GetInstance().GetBool(CSettings::SETTING_ADDONS_NOTIFICATIONS)
+>>>>>>> xbmc/Krypton
         || !m_isAutoUpdate) && !IsModal();
   CEventLog::GetInstance().Add(
       EventPtr(new CAddonManagementEvent(m_addon, m_isUpdate ? 24065 : 24084)), notify, false);

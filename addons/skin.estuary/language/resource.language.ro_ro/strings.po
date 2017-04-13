@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: Estuary
 # Addon id: skin.estuary
-# Addon Provider: phil65, Piers
+# Addon Provider: phil65, Ichabod Fletchman
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -110,7 +110,15 @@ msgstr "Tip de vizualizare"
 
 msgctxt "#31025"
 msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+<<<<<<< HEAD
 msgstr "Nu a fost găsit niciun elemen favori. Puteți adăuga orice element din vizualizările media la această listă folosind meniul contextual."
+=======
+msgstr "Nu a fost găsit niciun elemen favorit. Puteți adăuga orice element din vizualizările media la această listă folosind meniul contextual."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Decalaj temporal"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31028"
 msgid "Show fanart"
@@ -120,6 +128,13 @@ msgctxt "#31029"
 msgid "Last logged in"
 msgstr "Ultimul autentificat"
 
+<<<<<<< HEAD
+=======
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "Utilizare memorie sistem"
+
+>>>>>>> xbmc/Krypton
 msgctxt "#31031"
 msgid "Version info"
 msgstr "Informații versiune"
@@ -238,7 +253,11 @@ msgstr "Jurnal de evenimente"
 
 msgctxt "#31068"
 msgid "Choose presets"
+<<<<<<< HEAD
 msgstr "Alegeți prestabilirile"
+=======
+msgstr "Alegeți setările"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31069"
 msgid "Last Updated"
@@ -270,11 +289,19 @@ msgstr "Supliment versuri"
 
 msgctxt "#31083"
 msgid "Lyrics add-on settings"
+<<<<<<< HEAD
 msgstr "Stabiliri supliment versuri"
 
 msgctxt "#31084"
 msgid "Visualisation settings"
 msgstr "Stabiliri vizualizare"
+=======
+msgstr "Setări supliment versuri"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Setări vizualizare"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31089"
 msgid "Available groups"
@@ -298,7 +325,7 @@ msgstr "Folosește animații de glisare"
 
 msgctxt "#31096"
 msgid "Local subtitle available"
-msgstr "Este disponibil un subtitlu local"
+msgstr "Este disponibil o subtitrare locală"
 
 msgctxt "#31097"
 msgid "Channel options"
@@ -308,17 +335,29 @@ msgctxt "#31098"
 msgid "Select your Kodi user profile[CR]to login and continue"
 msgstr "Selectați profilul dumneavoastră de utilizator Kodi[CR]pentru a vă autentifica și continua"
 
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Fundal de iconițe"
+
 msgctxt "#31100"
 msgid "Shift"
 msgstr "Schimbare"
 
 msgctxt "#31101"
 msgid "InfoWall"
+<<<<<<< HEAD
 msgstr "Perete de informații"
 
 msgctxt "#31102"
 msgid "Wall"
 msgstr "Perete"
+=======
+msgstr "Fundal cu informații"
+
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Fundal"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31103"
 msgid "Enter text here..."
@@ -326,11 +365,19 @@ msgstr "Introduceți text"
 
 msgctxt "#31104"
 msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+<<<<<<< HEAD
 msgstr "Mediateca dumneavoastră este momentan goală. Pentru a o umple cu fișiere media, intrați în secțiunea de „Fișiere”, adăugați o sursă media și configurați-o. După ce sursa a fost adăugată și indexată veți putea să vă răsfoiți mediateca."
 
 msgctxt "#31105"
 msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
 msgstr "Adăugați surse video și stabiliți tipul de conținut potrivit pentru a vă umple mediatecile video."
+=======
+msgstr "Mediateca dumneavoastră este momentan goală. Pentru a o popula cu fișiere media, intrați în secțiunea de „Fișiere”, adăugați o sursă media și configurați-o. După ce sursa a fost adăugată și indexată veți putea să vă răsfoiți mediateca."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Adăugați surse video și setați tipul de conținut potrivit pentru ca să populați mediatecile video."
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31106"
 msgid "Teletext"
@@ -378,7 +425,11 @@ msgstr "Navigator suplimente"
 
 msgctxt "#31119"
 msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+<<<<<<< HEAD
 msgstr "Deocamdată nu aveți niciun supliment instalat. Vizitați răsfoitorul nostru de suplimente pentru a răsfoi colecția noastră și a vă îmbunătăți experiența cu Kodi."
+=======
+msgstr "Deocamdată nu aveți niciun supliment instalat. Vizitați navigatorul nostru de suplimente pentru a răsfoi colecția noastră și a vă îmbunătăți experiența cu Kodi."
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31120"
 msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
@@ -418,6 +469,7 @@ msgstr "Contribuitori"
 
 msgctxt "#31129"
 msgid "General settings applying to all areas of the skin."
+<<<<<<< HEAD
 msgstr "Stabiliri generale care se aplică tuturor porțiunilor costumului."
 
 msgctxt "#31130"
@@ -427,6 +479,17 @@ msgstr "Stabiliri conexe meniului principal: Configurați ecranul inițial cum v
 msgctxt "#31131"
 msgid "Choose skin fanart pack"
 msgstr "Alegeți pachetul de decoruri pentru costum"
+=======
+msgstr "Setări generale care se aplică tuturor porțiunilor costumului."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Setări conexe meniului principal: Configurați ecranul inițial cum vă place."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Alegeți pachetul de decoruri pentru temă"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31132"
 msgid "min"
@@ -446,7 +509,11 @@ msgstr "Informații PVR"
 
 msgctxt "#31138"
 msgid "Player process info"
+<<<<<<< HEAD
 msgstr "Informații de procesare redator"
+=======
+msgstr "Informații de procesare player"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31139"
 msgid "Video decoder"
@@ -475,3 +542,62 @@ msgstr "Navigator suplimente"
 msgctxt "#31145"
 msgid "Search add-ons"
 msgstr "Căutare suplimente"
+<<<<<<< HEAD
+=======
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Categorii"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Alegeți pachetul de decoruri"
+
+msgctxt "#31150"
+msgid "Repository"
+msgstr "Repozitoriu"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Videoclipuri muzicale nevăzute"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Videoclipuri muzicale aleatoare"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "Nu aveți nici un supliment de acest tip instalat. Vizitați navigatorul nostru de suplimente pentru a descărca suplimente create de comunitatea noastră."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Apăsați OK pentru a comuta între locații"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Nici un semn de carte creat deocamdata."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Alege tiparul fundalului"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Editare categorii"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Mod touch"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Creație artistică"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Arată marcajele media"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Tastatură numerică"
+>>>>>>> xbmc/Krypton

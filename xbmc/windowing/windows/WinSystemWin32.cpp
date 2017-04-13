@@ -94,7 +94,11 @@ bool CWinSystemWin32::CreateNewWindow(const std::string& name, bool fullScreen, 
     CLog::Log(LOGDEBUG, "%s : GetModuleHandle failed with %d", __FUNCTION__, GetLastError());
 
   // Load Win32 procs if available
+<<<<<<< HEAD
   HMODULE hUser32 = GetModuleHandle(L"user32");
+=======
+  HMODULE hUser32 = GetModuleHandleA("user32");
+>>>>>>> xbmc/Krypton
   if (hUser32)
   {
     PtrGetGestureInfo = (pGetGestureInfo)GetProcAddress(hUser32, "GetGestureInfo");

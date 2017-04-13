@@ -21,6 +21,7 @@ if(NOT VERBOSE)
 endif()
 
 # Includes
+<<<<<<< HEAD:CMakeLists.txt
 include(cmake/modules/extra/ECMEnableSanitizers.cmake)
 include(cmake/scripts/common/GeneratorSetup.cmake)
 include(cmake/scripts/common/AddOptions.cmake)
@@ -29,6 +30,16 @@ include(cmake/scripts/common/Macros.cmake)
 include(cmake/scripts/common/ProjectMacros.cmake)
 core_find_versions()
 include(cmake/scripts/${CORE_SYSTEM_NAME}/PathSetup.cmake)
+=======
+include(modules/extra/ECMEnableSanitizers.cmake)
+include(scripts/common/GeneratorSetup.cmake)
+include(scripts/common/AddOptions.cmake)
+include(scripts/common/ArchSetup.cmake)
+include(scripts/common/Macros.cmake)
+include(scripts/common/ProjectMacros.cmake)
+core_find_versions()
+include(scripts/${CORE_SYSTEM_NAME}/PathSetup.cmake)
+>>>>>>> xbmc/Krypton:project/cmake/CMakeLists.txt
 include(ExternalProject)
 
 # Languages and global compiler settings
@@ -99,6 +110,7 @@ endif()
 find_package(Threads REQUIRED QUIET)
 list(APPEND DEPLIBS ${CMAKE_THREAD_LIBS_INIT})
 
+<<<<<<< HEAD:CMakeLists.txt
 # Required dependencies. Keep in alphabetical order please
 set(required_deps Cdio
                   Cpluff
@@ -114,6 +126,12 @@ set(required_deps Cdio
                   Sqlite3
                   TagLib
                   TinyXML)
+=======
+# Required dependencies
+set(required_deps Sqlite3 FreeType PCRE Cpluff LibDvd
+                  TinyXML Python Yajl Cdio
+                  Lzo2 Fribidi TagLib FFMPEG CrossGUID)
+>>>>>>> xbmc/Krypton:project/cmake/CMakeLists.txt
 if(NOT WIN32)
   list(APPEND required_deps ZLIB)
 else()
@@ -123,6 +141,7 @@ if(CORE_SYSTEM_NAME STREQUAL android)
   list(APPEND required_deps Zip)
 endif()
 
+<<<<<<< HEAD:CMakeLists.txt
 # Optional dependencies. Keep in alphabetical order please
 set(optional_deps Alsa
                   Avahi
@@ -152,6 +171,18 @@ set(dyload_optional Bluray
                     CEC
                     NFS
                     Plist)
+=======
+# Optional dependencies
+set(optional_deps LCMS2 MicroHttpd MySqlClient SSH XSLT
+                  Alsa UDEV DBus Avahi SmbClient CCache
+                  PulseAudio VDPAU VAAPI Bluetooth CAP)
+
+# Required, dyloaded deps
+set(required_dyload Curl ASS)
+
+# Optional, dyloaded deps
+set(dyload_optional CEC Bluray Plist NFS)
+>>>>>>> xbmc/Krypton:project/cmake/CMakeLists.txt
 
 # Required by shared objects we link
 set(required_dep_libs EXPAT)
@@ -249,6 +280,10 @@ elseif(CORE_SYSTEM_NAME STREQUAL rbpi)
   core_require_dep(MMAL)
 endif()
 
+<<<<<<< HEAD:CMakeLists.txt
+=======
+
+>>>>>>> xbmc/Krypton:project/cmake/CMakeLists.txt
 # Compile Info
 add_custom_command(OUTPUT ${CORE_BUILD_DIR}/xbmc/CompileInfo.cpp
                           ${CMAKE_BINARY_DIR}/addons/xbmc.addon/addon.xml
@@ -362,7 +397,11 @@ unset(_MAIN_LIBRARIES)
 if(WIN32)
   set_target_properties(${APP_NAME_LC} PROPERTIES WIN32_EXECUTABLE ON)
   set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT ${APP_NAME_LC})
+<<<<<<< HEAD:CMakeLists.txt
   target_sources(${APP_NAME_LC} PRIVATE ${CMAKE_SOURCE_DIR}/xbmc/platform/win32/app.manifest)
+=======
+  target_sources(${APP_NAME_LC} PRIVATE ${CORE_SOURCE_DIR}/xbmc/platform/win32/app.manifest)
+>>>>>>> xbmc/Krypton:project/cmake/CMakeLists.txt
 elseif(CORE_SYSTEM_NAME STREQUAL android)
   # Nothing
 elseif(CORE_SYSTEM_NAME STREQUAL ios)

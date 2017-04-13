@@ -206,7 +206,11 @@ bool CPeripheralJoystick::OnButtonMotion(unsigned int buttonIndex, bool bPressed
 bool CPeripheralJoystick::OnHatMotion(unsigned int hatIndex, HAT_STATE state)
 {
   CLog::Log(LOGDEBUG, "HAT [ %u ] on \"%s\" %s", hatIndex,
+<<<<<<< HEAD
             DeviceName().c_str(), CJoystickTranslator::HatStateToString(state));
+=======
+            DeviceName().c_str(), JOYSTICK::CJoystickTranslator::HatStateToString(state));
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_handlerMutex);
 

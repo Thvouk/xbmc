@@ -569,7 +569,11 @@ JSONRPC_STATUS CPlayerOperations::Open(const std::string &method, ITransportLaye
     if (!CServiceBroker::GetPVRManager().IsStarted())
       return FailedToExecute;
 
+<<<<<<< HEAD
     CPVRChannelGroupsContainerPtr channelGroupContainer = CServiceBroker::GetPVRManager().ChannelGroups();
+=======
+    CPVRChannelGroupsContainerPtr channelGroupContainer = g_PVRChannelGroups;
+>>>>>>> xbmc/Krypton
     if (!channelGroupContainer)
       return FailedToExecute;
 
@@ -594,7 +598,11 @@ JSONRPC_STATUS CPlayerOperations::Open(const std::string &method, ITransportLaye
     if (!CServiceBroker::GetPVRManager().IsStarted())
       return FailedToExecute;
 
+<<<<<<< HEAD
     CPVRRecordingsPtr recordingsContainer = CServiceBroker::GetPVRManager().Recordings();
+=======
+    CPVRRecordingsPtr recordingsContainer = g_PVRRecordings;
+>>>>>>> xbmc/Krypton
     if (!recordingsContainer)
       return FailedToExecute;
 

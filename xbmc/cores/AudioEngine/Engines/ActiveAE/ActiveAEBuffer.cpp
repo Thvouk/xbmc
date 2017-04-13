@@ -405,6 +405,20 @@ void CActiveAEBufferPoolResample::ConfigureResampler(bool normalizelevels, bool 
 {
   bool normalize = true;
   if ((m_format.m_channelLayout.Count() < m_inputFormat.m_channelLayout.Count()) && !normalizelevels)
+<<<<<<< HEAD
+=======
+    normalize = false;
+
+  /* Disable upmix if DSP layout > 2.0, becomes perfomed by DSP */
+  bool ignoreUpmix = false;
+  if (dspenabled && m_useDSP && m_processor->GetChannelLayout().Count() > 2)
+    ignoreUpmix = true;
+
+  if (m_useResampler &&
+      ((m_resampleQuality != quality) ||
+       ((m_stereoUpmix != stereoupmix) && !ignoreUpmix) ||
+       (m_normalize != normalize)))
+>>>>>>> xbmc/Krypton
   {
     normalize = false;
   }

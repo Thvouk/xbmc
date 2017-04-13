@@ -39,7 +39,10 @@ namespace JOYSTICK
   class CDeadzoneFilter;
   class IButtonMap;
   class IDriverHandler;
+<<<<<<< HEAD
 }
+=======
+>>>>>>> xbmc/Krypton
 }
 
 namespace PERIPHERALS
@@ -47,7 +50,11 @@ namespace PERIPHERALS
   class CPeripherals;
 
   class CPeripheralJoystick : public CPeripheral, //! @todo extend CPeripheralHID
+<<<<<<< HEAD
                               public KODI::JOYSTICK::IDriverReceiver
+=======
+                              public JOYSTICK::IDriverReceiver
+>>>>>>> xbmc/Krypton
   {
   public:
     CPeripheralJoystick(CPeripherals& manager, const PeripheralScanResult& scanResult, CPeripheralBus* bus);
@@ -58,6 +65,7 @@ namespace PERIPHERALS
     virtual bool InitialiseFeature(const PeripheralFeature feature) override;
     virtual void OnUserNotification() override;
     virtual bool TestFeature(PeripheralFeature feature) override;
+<<<<<<< HEAD
     virtual void RegisterJoystickDriverHandler(KODI::JOYSTICK::IDriverHandler* handler, bool bPromiscuous) override;
     virtual void UnregisterJoystickDriverHandler(KODI::JOYSTICK::IDriverHandler* handler) override;
     virtual KODI::JOYSTICK::IDriverReceiver* GetDriverReceiver() override { return this; }
@@ -65,6 +73,15 @@ namespace PERIPHERALS
 
     bool OnButtonMotion(unsigned int buttonIndex, bool bPressed);
     bool OnHatMotion(unsigned int hatIndex, KODI::JOYSTICK::HAT_STATE state);
+=======
+    virtual void RegisterJoystickDriverHandler(JOYSTICK::IDriverHandler* handler, bool bPromiscuous) override;
+    virtual void UnregisterJoystickDriverHandler(JOYSTICK::IDriverHandler* handler) override;
+    virtual JOYSTICK::IDriverReceiver* GetDriverReceiver() override { return this; }
+    virtual JOYSTICK::IActionMap* GetActionMap() override { return &m_defaultInputHandler; }
+
+    bool OnButtonMotion(unsigned int buttonIndex, bool bPressed);
+    bool OnHatMotion(unsigned int hatIndex, JOYSTICK::HAT_STATE state);
+>>>>>>> xbmc/Krypton
     bool OnAxisMotion(unsigned int axisIndex, float position);
     void ProcessAxisMotions(void);
 

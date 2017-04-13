@@ -510,8 +510,11 @@ bool CTagLoaderTagLib::ParseTag(APE::Tag *ape, EmbeddedArt *art, CMusicInfoTag& 
       AddArtistRole(tag, "Ensemble", StringListToVectorString(it->second.toStringList()));
     else if (it->first == "LYRICIST")
       AddArtistRole(tag, "Lyricist", StringListToVectorString(it->second.toStringList()));
+<<<<<<< HEAD
     else if (it->first == "WRITER")
       AddArtistRole(tag, "Writer", StringListToVectorString(it->second.toStringList()));
+=======
+>>>>>>> xbmc/Krypton
     else if ((it->first == "MIXARTIST") || (it->first == "REMIXER"))
       AddArtistRole(tag, "Remixer", StringListToVectorString(it->second.toStringList()));
     else if (it->first == "ARRANGER") 
@@ -615,8 +618,11 @@ bool CTagLoaderTagLib::ParseTag(Ogg::XiphComment *xiph, EmbeddedArt *art, CMusic
       AddArtistRole(tag, "Ensemble", StringListToVectorString(it->second));
     else if (it->first == "LYRICIST")
       AddArtistRole(tag, "Lyricist", StringListToVectorString(it->second));
+<<<<<<< HEAD
     else if (it->first == "WRITER")
       AddArtistRole(tag, "Writer", StringListToVectorString(it->second));
+=======
+>>>>>>> xbmc/Krypton
     else if ((it->first == "MIXARTIST") || (it->first == "REMIXER"))
       AddArtistRole(tag, "Remixer", StringListToVectorString(it->second));
     else if (it->first == "ARRANGER")
@@ -1052,7 +1058,11 @@ void CTagLoaderTagLib::AddArtistInstrument(CMusicInfoTag &tag, const std::vector
 
 bool CTagLoaderTagLib::Load(const std::string& strFileName, CMusicInfoTag& tag, const std::string& fallbackFileExtension, MUSIC_INFO::EmbeddedArt *art /* = NULL */)
 {
+<<<<<<< HEAD
   // Dont try to read the tags for streams & shoutcast  
+=======
+  // Dont try to read the tags for streams & shoutcast
+>>>>>>> xbmc/Krypton
   if (URIUtils::IsInternetStream(strFileName))
     return false;
 

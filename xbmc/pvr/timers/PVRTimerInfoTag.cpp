@@ -1025,7 +1025,11 @@ CPVRChannelPtr CPVRTimerInfoTag::ChannelTag(void) const
 
 CPVRChannelPtr CPVRTimerInfoTag::UpdateChannel(void)
 {
+<<<<<<< HEAD
   const CPVRChannelPtr channel(CServiceBroker::GetPVRManager().ChannelGroups()->Get(m_bIsRadio)->GetGroupAll()->GetByUniqueID(m_iClientChannelUid, m_iClientId));
+=======
+  const CPVRChannelPtr channel(g_PVRChannelGroups->Get(m_bIsRadio)->GetGroupAll()->GetByUniqueID(m_iClientChannelUid, m_iClientId));
+>>>>>>> xbmc/Krypton
 
   CSingleLock lock(m_critSection);
   m_channel = channel;

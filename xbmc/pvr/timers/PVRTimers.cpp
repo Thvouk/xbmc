@@ -345,6 +345,7 @@ bool CPVRTimers::UpdateEntries(const CPVRTimersContainer &timers, const std::vec
     UpdateChannels();
     lock.Leave();
 
+<<<<<<< HEAD
     CServiceBroker::GetPVRManager().SetChanged();
     CServiceBroker::GetPVRManager().NotifyObservers(bAddedOrDeleted ? ObservableMessageTimersReset : ObservableMessageTimers);
 
@@ -360,6 +361,29 @@ bool CPVRTimers::UpdateEntries(const CPVRTimersContainer &timers, const std::vec
 
         std::string strIcon;
         CServiceBroker::GetPVRManager().Clients()->GetClientAddonIcon(entry.first, strIcon);
+=======
+    g_PVRManager.SetChanged();
+    g_PVRManager.NotifyObservers(bAddedOrDeleted ? ObservableMessageTimersReset : ObservableMessageTimers);
+
+    if (g_PVRManager.IsStarted())
+    {
+      /* queue notifications / fill eventlog */
+      for (const auto &entry : timerNotifications)
+      {
+        if (CSettings::GetInstance().GetBool(CSettings::SETTING_PVRRECORD_TIMERNOTIFICATIONS))
+          CGUIDialogKaiToast::QueueNotification(CGUIDialogKaiToast::Info, g_localizeStrings.Get(19166), entry.second);
+
+        std::string strName;
+        g_PVRClients->GetClientAddonName(entry.first, strName);
+
+        std::string strIcon;
+        g_PVRClients->GetClientAddonIcon(entry.first, strIcon);
+
+        CEventLog::GetInstance().Add(EventPtr(new CNotificationEvent(strName, entry.second, strIcon, EventLevel::Information)));
+      }
+    }
+  }
+>>>>>>> xbmc/Krypton
 
         job->AddEvent(m_settings.GetBoolValue(CSettings::SETTING_PVRRECORD_TIMERNOTIFICATIONS),
                       false, // info, no error
@@ -668,9 +692,15 @@ bool CPVRTimers::DeleteTimersOnChannel(const CPVRChannelPtr &channel, bool bDele
   }
 
   if (bChanged)
+<<<<<<< HEAD
     CServiceBroker::GetPVRManager().SetChanged();
 
   CServiceBroker::GetPVRManager().NotifyObservers(ObservableMessageTimersReset);
+=======
+    g_PVRManager.SetChanged();
+
+  g_PVRManager.NotifyObservers(ObservableMessageTimersReset);
+>>>>>>> xbmc/Krypton
 
   return bReturn;
 }

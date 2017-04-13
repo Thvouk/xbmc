@@ -21,8 +21,11 @@
 
 class CKey;
 
+<<<<<<< HEAD
 namespace KODI
 {
+=======
+>>>>>>> xbmc/Krypton
 namespace KEYBOARD
 {
   /*!
@@ -44,4 +47,7 @@ namespace KEYBOARD
     virtual unsigned int GetActionID(const CKey& key) = 0;
   };
 }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> xbmc/Krypton

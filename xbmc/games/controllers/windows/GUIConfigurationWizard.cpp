@@ -43,8 +43,12 @@ using namespace GAME;
 
 CGUIConfigurationWizard::CGUIConfigurationWizard(bool bEmulation, unsigned int controllerNumber /* = 0 */) :
   CThread("GUIConfigurationWizard"),
+<<<<<<< HEAD
   m_bEmulation(bEmulation),
   m_controllerNumber(controllerNumber),
+=======
+  m_callback(nullptr),
+>>>>>>> xbmc/Krypton
   m_actionMap(new KEYBOARD::CKeymapActionMap)
 {
   InitializeState();
@@ -269,10 +273,14 @@ void CGUIConfigurationWizard::OnEventFrame(const JOYSTICK::IButtonMap* buttonMap
 
 void CGUIConfigurationWizard::OnLateAxis(const JOYSTICK::IButtonMap* buttonMap, unsigned int axisIndex)
 {
+<<<<<<< HEAD
   CSingleLock lock(m_stateMutex);
 
   m_lateAxisDetected = true;
   Abort(false);
+=======
+  //! @todo
+>>>>>>> xbmc/Krypton
 }
 
 void CGUIConfigurationWizard::OnMotion(const JOYSTICK::IButtonMap* buttonMap)
@@ -327,11 +335,14 @@ bool CGUIConfigurationWizard::OnKeyPress(const CKey& key)
   }
 
   return bHandled;
+<<<<<<< HEAD
 }
 
 bool CGUIConfigurationWizard::OnButtonPress(const std::string& button)
 {
   return Abort(false);
+=======
+>>>>>>> xbmc/Krypton
 }
 
 void CGUIConfigurationWizard::InstallHooks(void)

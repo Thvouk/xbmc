@@ -883,8 +883,16 @@ void CGUIEPGGridContainer::OnDown()
       ScrollToChannelOffset(0);
       SetChannel(0);
     }
+<<<<<<< HEAD
     else
       CGUIControl::OnDown();
+=======
+  }
+  else if (action.GetNavigation() == GetID() || !action.HasActionsMeetingCondition()) // wrap around
+  {
+    ScrollToChannelOffset(0);
+    SetChannel(0);
+>>>>>>> xbmc/Krypton
   }
   else
   {

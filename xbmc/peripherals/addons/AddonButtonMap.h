@@ -100,6 +100,8 @@ namespace PERIPHERALS
 
     virtual bool GetAxisProperties(unsigned int axisIndex, int& center, unsigned int& range) override;
 
+    virtual bool GetAxisProperties(unsigned int axisIndex, int& center, unsigned int& range) override;
+
     virtual void SaveButtonMap() override;
 
     virtual void RevertButtonMap() override;

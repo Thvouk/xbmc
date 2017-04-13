@@ -60,6 +60,26 @@ msgctxt "#31016"
 msgid "Albums"
 msgstr "Albums"
 
+msgctxt "#31017"
+msgid "PVR info"
+msgstr "PVR info"
+
+msgctxt "#31018"
+msgid "Player process info"
+msgstr "Player process info"
+
+msgctxt "#31019"
+msgid "Video decoder"
+msgstr "Video decoder"
+
+msgctxt "#31020"
+msgid "Pixel format"
+msgstr "Pixel format"
+
+msgctxt "#31021"
+msgid "System memory usage"
+msgstr "System memory usage"
+
 msgctxt "#31024"
 msgid "Page"
 msgstr "Page"
@@ -144,6 +164,13 @@ msgctxt "#31303"
 msgid "Data provider"
 msgstr "Data provider"
 
+<<<<<<< HEAD
+=======
+msgctxt "#31309"
+msgid "System Memory Used:"
+msgstr "System Memory Used:"
+
+>>>>>>> xbmc/Krypton
 msgctxt "#31320"
 msgid "Last Logged In"
 msgstr "Last Logged In"
@@ -199,6 +226,7 @@ msgstr "Configure library sources · Show the media lists display content · Con
 msgctxt "#31410"
 msgid "Configure skin · Configure region · Configure control · Configure screensaver · Configure master lock"
 msgstr "Configure skin · Configure region · Configure control · Configure screensaver · Configure master lock"
+<<<<<<< HEAD
 
 msgctxt "#31411"
 msgid "Configure your profiles · Set locking options · Enable login screen"
@@ -211,6 +239,28 @@ msgstr "Display system information · Hardware statistics · Check storage avail
 msgctxt "#31421"
 msgid "Select your Kodi user Profile[CR]to login and continue"
 msgstr "Select your Kodi user Profile[CR]to login and continue"
+=======
+
+msgctxt "#31411"
+msgid "Configure your profiles · Set locking options · Enable login screen"
+msgstr "Configure your profiles · Set locking options · Enable login screen"
+
+msgctxt "#31412"
+msgid "Display system information · Hardware statistics · Check storage availability · View network configuration"
+msgstr "Display system information · Hardware statistics · Check storage availability · View network configuration"
+
+msgctxt "#31421"
+msgid "Select your Kodi user Profile[CR]to login and continue"
+msgstr "Select your Kodi user Profile[CR]to login and continue"
+
+msgctxt "#31548"
+msgid "Home menu"
+msgstr "Home menu"
+
+msgctxt "#31549"
+msgid "Home Add-ons"
+msgstr "Home Add-ons"
+>>>>>>> xbmc/Krypton
 
 msgctxt "#31550"
 msgid "Backgrounds"

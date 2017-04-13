@@ -109,7 +109,10 @@ void CPeripherals::Initialise()
 #if defined(TARGET_ANDROID)
   busses.push_back(std::make_shared<CPeripheralBusAndroid>(*this));
 #endif
+<<<<<<< HEAD
   busses.push_back(std::make_shared<CPeripheralBusApplication>(*this));
+=======
+>>>>>>> xbmc/Krypton
 
   {
     CSingleLock bussesLock(m_critSectionBusses);
@@ -372,8 +375,11 @@ void CPeripherals::OnDeviceAdded(const CPeripheralBus &bus, const CPeripheral &p
 
   //! @todo Improve device notifications in v18
 #if 0
+<<<<<<< HEAD
   bool bNotify = true;
 
+=======
+>>>>>>> xbmc/Krypton
   // don't show a notification for devices detected during the initial scan
   if (!bus.IsInitialised())
     bNotify = false;
@@ -393,6 +399,7 @@ void CPeripherals::OnDeviceDeleted(const CPeripheralBus &bus, const CPeripheral 
 
   //! @todo Improve device notifications in v18
 #if 0
+<<<<<<< HEAD
   bool bNotify = true;
 
   // don't show a notification for emulated peripherals
@@ -401,6 +408,9 @@ void CPeripherals::OnDeviceDeleted(const CPeripheralBus &bus, const CPeripheral 
 
   if (bNotify)
     CGUIDialogKaiToast::QueueNotification(CGUIDialogKaiToast::Info, g_localizeStrings.Get(35006), peripheral.DeviceName());
+=======
+  CGUIDialogKaiToast::QueueNotification(CGUIDialogKaiToast::Info, g_localizeStrings.Get(35006), peripheral.DeviceName());
+>>>>>>> xbmc/Krypton
 #endif
 }
 
@@ -770,7 +780,11 @@ bool CPeripherals::GetNextKeypress(float frameTime, CKey &key)
 
 void CPeripherals::OnUserNotification()
 {
+<<<<<<< HEAD
   if (!CServiceBroker::GetSettings().GetBool(CSettings::SETTING_INPUT_RUMBLENOTIFY))
+=======
+  if (!CSettings::GetInstance().GetBool(CSettings::SETTING_INPUT_RUMBLENOTIFY))
+>>>>>>> xbmc/Krypton
     return;
 
   PeripheralVector peripherals;
